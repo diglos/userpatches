@@ -72,8 +72,10 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 
 2. Flash the MicroSD (for example, with the Odroid C2 zipped Image on a mmcblk0 device):
 
-`unzip 2017-01-15-EthArmbian-parity-1.4.9-odroidc2.img.zip`
-`sudo dd bs=1M if=2017-01-15-EthArmbian-parity-1.4.9-odroidc2.img of=/dev/mmcblk0 && sync`
+```
+unzip 2017-01-15-EthArmbian-parity-1.4.9-odroidc2.img.zip
+sudo dd bs=1M if=2017-01-15-EthArmbian-parity-1.4.9-odroidc2.img of=/dev/mmcblk0 && sync
+```
 
 3. Extract the MicroSD card
 
