@@ -43,11 +43,11 @@ case $RELEASE in
 	# check ARCH and choose the right architecture (armhf or arm64)
 	echo "Installing Parity and Geth Debian packages"
 	if [[ $ARCH == armhf ]]; then
-        	dpkg -i /tmp/overlay/parity-rasp_1.4.9-0_armhf.deb
-		dpkg -i /tmp/overlay/geth-rasp_1.5.6-0_armhf.deb
+        	dpkg -i /tmp/overlay/parity-rasp_1.5.0-0_armhf.deb
+		dpkg -i /tmp/overlay/geth-rasp_1.5.8-0_armhf.deb
 	else
-                dpkg -i /tmp/overlay/parity-rasp_1.4.9-0_arm64.deb
-		dpkg -i /tmp/overlay/geth-rasp_1.5.6-0_arm64.deb
+                dpkg -i /tmp/overlay/parity-rasp_1.5.0-0_arm64.deb
+		dpkg -i /tmp/overlay/geth-rasp_1.5.8-0_arm64.deb
 	fi
 	;;
 	trusty)
