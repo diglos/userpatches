@@ -12,6 +12,8 @@ RELEASE=$1
 FAMILY=$2
 BOARD=$3
 BUILD_DESKTOP=$4
+
+# Set ARCH variable for choosing the right package architecture
 ARCH=`dpkg --print-architecture`
 
 case $RELEASE in
@@ -20,10 +22,11 @@ case $RELEASE in
 	;;
 	jessie)
 
-	# Minor Ethereum tweaks
+	# Set of scripts to turn an ARMbian image into a full Ethereum node
+	# Visit https://www.armbian.com for further info regarding image customization and Armbian itself
 	# Diego Losada <diego.losadaf@gmail.com>
-	
-	# Assign hostname on first boot
+
+	# Assign unique hostname on first boot (ethnode-$MAC-HASH)
 	cp /tmp/overlay/armbian_first_run.txt /boot
 	
 	# Create pi user and assign groups for Geth and Parity systemd daemon
@@ -43,19 +46,18 @@ case $RELEASE in
 	# check ARCH and choose the right architecture (armhf or arm64)
 	echo "Installing Parity and Geth Debian packages"
 	if [[ $ARCH == armhf ]]; then
-		dpkg -i /tmp/overlay/libssl1.1_1.1.0c-2_armhf.deb
-        	dpkg -i /tmp/overlay/parity-rasp_1.5.0-1_armhf.deb
-		dpkg -i /tmp/overlay/geth-rasp_1.5.8-0_armhf.deb
+        	dpkg -i /tmp/overlay/parity-rasp_1.5.2-0_armhf.deb
+		dpkg -i /tmp/overlay/geth-rasp_1.5.9-0_armhf.deb
+		dpkg -i /tmp/overlay/ipfs_0.4.5-0_armhf.deb
 	else
-		dpkg -i /tmp/libssl1.1_1.1.0c-2_arm64.deb
-                dpkg -i /tmp/overlay/parity-rasp_1.5.0-1_arm64.deb
-		dpkg -i /tmp/overlay/geth-rasp_1.5.8-0_arm64.deb
+                dpkg -i /tmp/overlay/parity-rasp_1.5.2-0_arm64.deb
+		dpkg -i /tmp/overlay/geth-rasp_1.5.9-0_arm64.deb
 	fi
 	;;
 	trusty)
 	# your code here
 	;;
 	xenial)
-	# your code here
+	# you can copy the above code here if you prefer Ubuntu instead of Debian
 	;;
 esac
