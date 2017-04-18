@@ -54,6 +54,7 @@ case $RELEASE in
 		dpkg -i /tmp/overlay/libssl1.1_1.1.0d-2_arm64.deb
                 dpkg -i /tmp/overlay/parity-rasp_1.6.6-0_arm64.deb
 		dpkg -i /tmp/overlay/geth-rasp_1.6.0-0_arm64.deb
+		dpkg -i /tmp/overlay/ipfs_0.4.8-0_arm64.deb
 	fi
 	;;
 	trusty)
