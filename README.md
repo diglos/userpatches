@@ -2,14 +2,13 @@
 
 This is a custom configuration for creating an Ethereum full node based on Armbian distro build tools. Please visit https://www.armbian.com and https://github.com/igorpecovnik/lib for further info regarding ARMBIAN.
 
+Currently (July 2018) these scripts are designed to build an Armbian image for the FreeElec NanoPC-T4 due to the high hardware specs needed to sync the Ethereum Blockchain
+
 For more information regarding Ethereum please visit:
 
 https://ethereum.org/
 https://www.reddit.com/r/ethereum/
 
-If you have a Raspberry Pi 2/3 please visit:
-
-https://github.com/diglos/pi-gen
 
 # EthArmbian
 
@@ -25,7 +24,7 @@ EthArmbian is a custom Linux image for ARM SoC devices that runs Geth or Parity 
 
 # Images
 
-Currently, there is only one image available (Odroid C2 device):
+Currently, there is only one image available (NanoPC-T4O):
 
 http://ethraspbian.com/downloads/image_2017-06-13-EthArmbian-parity-1.6.8-img.zip
 
@@ -35,28 +34,19 @@ For other compatible devices please check the following instructions for buildin
 
 ## Prerequisites
 
-- Ubuntu 16.04 (virtual or physical machine)
+- Ubuntu 18.04 (virtual or physical machine)
 - Superuser rights
 - Git
 
-## Install the Armbian build tools and ethereum customization scripts
+I strongly recommend the vagrant environment.
 
-Open a terminal on your Ubuntu 16.04 machine, Install Git, clone Git repos and copy compile.sh file
+## Git branch and instructions
 
-```
-sudo apt-get install git
-git clone https://github.com/igorpecovnik/lib --depth 1
-git clone https://github.com/diglos/userpatches.git
-cp lib/compile.sh .
-```
+For building your own image, please check tha Armbian documentation. Please note that NanoPC T4 is not yet supported by Armbian so I'm using uses David Chang's Armbian fork (devel Branch)
 
-Run:
+https://docs.armbian.com/
+https://github.com/hjc4869/armbian-build/tree/development
 
-`./compile.sh RELEASE=jessie`
-
-Select "OS image for installation to SD card" --> Select your ARM device --> Select "Default" --> Select "Image with console interface (server)"
-
-You may found the image under output/images directory
 
 #Install instructions for Linux
 
@@ -82,7 +72,7 @@ sudo dd bs=1M if=2017-02-20-EthArmbian-parity-1.5.2-odroidc2.img of=/dev/mmcblk0
 You are done. Insert the MicroSD in your ARM SoC and power it on. Login details:
 
 ```
-User: pi
+User: ethereum
 Password: ethereum
 ```
 
@@ -139,18 +129,18 @@ Geth runs as a bootup service so it wakes up automatically. You can stop, start,
 
 ### Changing settings
 
-Settings are stored on /etc/geth/geth.conf so you just have to edit this file and restart the daemon, for instance (setting a cache value):
+Settings are stored on /etc/ethereum/geth.conf so you just have to edit this file and restart the daemon, for instance (setting a cache value):
 
 ```
-sudo echo ARGS="--cache 384" > /etc/geth/geth.conf
+sudo echo ARGS="--cache 3072" > /etc/geth/geth.conf
 sudo systemctl restart geth
 ```
 ### Light client and Light server
 
-Light client works great on the Pi but as the main goal of this image is to support the Ethereum network it makes more sense to run Geth in Light server mode (to support the devices connecting as Light clients). It seems to run quite well with a little cache. To do so type:
+Light client works great but as the main goal of this image is to support the Ethereum network it makes more sense to run Geth in Light server mode (to support the devices connecting as Light clients). It seems to run quite well with a little cache. To do so type:
 
 ```
-sudo echo ARGS="--lightserv 25 --lightpeers 50 --cache 384" > /etc/geth/geth.conf
+sudo echo ARGS="--lightserv 25 --lightpeers 50 --cache 3072" > /etc/ethereum/geth.conf
 sudo systemctl restart geth
 ```
 
@@ -169,10 +159,10 @@ Parity runs as a bootup service so it wakes up automatically. You can stop, star
 
 ### Changing settings
 
-Settings are stored on /etc/geth/parity.conf so you just have to edit this file and restart the daemon, for instance (setting a cache value):
+Settings are stored on /etc/ethereum/parity.conf so you just have to edit this file and restart the daemon, for instance (setting a cache value):
 
 ```
-sudo echo ARGS="--cache 384" > /etc/geth/parity.conf
+sudo echo ARGS="--cache 384" > /etc/ethereum/parity.conf
 sudo systemctl restart parity
 ```
 
