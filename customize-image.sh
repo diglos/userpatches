@@ -30,14 +30,14 @@ case $RELEASE in
 	cp /tmp/overlay/armbian_first_run.txt /boot
 	
 	# Create ethereum user and assign groups for Geth and Parity systemd daemon
-	echo "Creating ethereum  user for Geth and Parity"
-	if ! id -u ethereum >/dev/null 2>&1; then
-		adduser --disabled-password --gecos "" ethereum
-	fi
-	echo "ethereum:ethereum" | chpasswd
-	for GRP in sudo netdev audio video dialout plugdev bluetooth; do
-  		adduser ethereum $GRP
-	done	
+	#echo "Creating ethereum  user for Geth and Parity"
+	#if ! id -u ethereum >/dev/null 2>&1; then
+	#	adduser --disabled-password --gecos "" ethereum
+	#fi
+	#echo "ethereum:ethereum" | chpasswd
+	#for GRP in sudo netdev audio video dialout plugdev bluetooth; do
+  	#	adduser ethereum $GRP
+	#done	
 	
 	# Disable new account creation
 	#rm -rf /root/.not_logged_in_yet

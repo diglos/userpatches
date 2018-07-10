@@ -9,6 +9,36 @@ MAC_HASH=`cat /sys/class/net/eth0/address | sha256sum | awk '{print substr($0,0,
 echo ethnode-$MAC_HASH > /etc/hostname
 sed -i "s/127.0.1.1.*/127.0.1.1\tethnode-$MAC_HASH/g" /etc/hosts
 
+#Format NVMe SSD and mount it as /home
+if stat  /dev/nvme0n1 > /dev/null 2>&1;
+then
+        echo Formatting NVMe Drive...
+        fdisk /dev/nvme0n1 <<EOF
+n
+p
+1
+
+
+w
+EOF
+mkfs.ext4 /dev/nvme0n1p1
+echo '/dev/nvme0n1p1 /home ext4 defaults 0 2' >> /etc/fstab && mount /dev/nvme0n1p1 /home
+
+else
+        echo no SDD detected
+fi
+
+#Create Ethereum account
+echo "Creating ethereum  user for Geth and Parity"
+if ! id -u ethereum >/dev/null 2>&1; then
+        adduser --disabled-password --gecos "" ethereum
+fi
+
+echo "ethereum:ethereum" | chpasswd
+for GRP in sudo netdev audio video dialout plugdev bluetooth; do
+	adduser ethereum $GRP
+done
+
 #-----------------------------------------------------------------
 # General:
 # 1 = delete this file, after first run setup is completed.
