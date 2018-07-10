@@ -52,7 +52,7 @@ case $RELEASE in
 	#else
         #        dpkg -i /tmp/overlay/parity-rasp_1.6.8-0_arm64.deb
 	dpkg -i /tmp/overlay/geth_1.8.12-0_arm64.deb
-	dpkg -i /tmp/overlay/parity_1.10.7-0_arm64.deb
+	dpkg -i /tmp/overlay/parity_1.10.9-0_arm64.deb
 	#	dpkg -i /tmp/overlay/ipfs_0.4.9-0_arm64.deb
 	#fi
 	;;
