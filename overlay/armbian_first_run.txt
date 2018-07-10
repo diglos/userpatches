@@ -21,7 +21,7 @@ p
 
 w
 EOF
-mkfs.ext4 /dev/nvme0n1p1
+mkfs.ext4 -F /dev/nvme0n1p1
 echo '/dev/nvme0n1p1 /home ext4 defaults 0 2' >> /etc/fstab && mount /dev/nvme0n1p1 /home
 
 else
