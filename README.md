@@ -24,9 +24,9 @@ EthArmbian is a custom Linux image for ARM SoC devices that runs Geth or Parity 
 
 # Images
 
-Currently, there is only one image available (NanoPC-T4O):
+Currently, there is only one image available (NanoPC-T4):
 
-http://ethraspbian.com/downloads/image_2017-06-13-EthArmbian-parity-1.6.8-img.zip
+RELEASE PENDING
 
 For other compatible devices please check the following instructions for building the image
 
@@ -42,11 +42,13 @@ I strongly recommend the vagrant environment.
 
 ## Git branch and instructions
 
-For building your own image, please check tha Armbian documentation. Please note that NanoPC T4 is not yet supported by Armbian so I'm using uses David Chang's Armbian fork (devel Branch)
+For building your own image, please check tha Armbian documentation.
 
 https://docs.armbian.com/
-https://github.com/hjc4869/armbian-build/tree/development
 
+Please note that NanoPC T4 is not yet supported by Armbian so I'm using using David Chang's Armbian fork (devel Branch)
+
+https://github.com/hjc4869/armbian-build/tree/development
 
 #Install instructions for Linux
 
@@ -72,7 +74,7 @@ sudo dd bs=1M if=2017-02-20-EthArmbian-parity-1.5.2-odroidc2.img of=/dev/mmcblk0
 You are done. Insert the MicroSD in your ARM SoC and power it on. Login details:
 
 ```
-User: ethereum
+User: ethereum 
 Password: ethereum
 ```
 
@@ -129,10 +131,10 @@ Geth runs as a bootup service so it wakes up automatically. You can stop, start,
 
 ### Changing settings
 
-Settings are stored on /etc/ethereum/geth.conf so you just have to edit this file and restart the daemon, for instance (setting a cache value):
+Geth settings are stored on /etc/ethereum/geth.conf so you just have to edit this file and restart the daemon, for instance (setting a cache value):
 
 ```
-sudo echo ARGS="--cache 3072" > /etc/geth/geth.conf
+sudo echo ARGS="--cache 3072" > /etc/ethereum/geth.conf
 sudo systemctl restart geth
 ```
 ### Light client and Light server
@@ -162,13 +164,13 @@ Parity runs as a bootup service so it wakes up automatically. You can stop, star
 Settings are stored on /etc/ethereum/parity.conf so you just have to edit this file and restart the daemon, for instance (setting a cache value):
 
 ```
-sudo echo ARGS="--cache 384" > /etc/ethereum/parity.conf
+sudo echo ARGS="--cache 3072" > /etc/ethereum/parity.conf
 sudo systemctl restart parity
 ```
 
 ### Warp mode
 
-Parity 1.4 introduces Warp sync, quoting Ethcore "This is a highly optimised chain synchronisation mode that uses various methods of compression to distribute the state of Ethereum. Cryptographic manifests ensure you are downloading the right data and because it progressively downloads the blocks and receipts in the background, you will end up with a node exactly as if you had done a full sync". Warp mode is set by default on Armbian.
+Parity >1.4 introduces Warp sync, quoting Ethcore "This is a highly optimised chain synchronisation mode that uses various methods of compression to distribute the state of Ethereum. Cryptographic manifests ensure you are downloading the right data and because it progressively downloads the blocks and receipts in the background, you will end up with a node exactly as if you had done a full sync". Warp mode is set by default on Armbian.
 
 ### Tip
 
