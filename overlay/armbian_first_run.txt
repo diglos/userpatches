@@ -39,6 +39,12 @@ for GRP in sudo netdev audio video dialout plugdev bluetooth; do
 	adduser ethereum $GRP
 done
 
+#disable new account creation as we already have ethereum user
+rm -rf /root/.not_logged_in_yet
+
+#reboot for hostname changes to take effect
+reboot
+
 #-----------------------------------------------------------------
 # General:
 # 1 = delete this file, after first run setup is completed.
