@@ -5,11 +5,12 @@
 #	- Settings below will be applied on 1st run of Armbian
 #-----------------------------------------------------------------
 
+# Modify hostname (ethnode-$MAC-HASH-CHUNK)
 MAC_HASH=`cat /sys/class/net/eth0/address | sha256sum | awk '{print substr($0,0,9)}'`
 echo ethnode-$MAC_HASH > /etc/hostname
 sed -i "s/127.0.1.1.*/127.0.1.1\tethnode-$MAC_HASH/g" /etc/hosts
 
-#Format NVMe SSD and mount it as /home
+# Format NVMe SSD and mount it as /home
 if stat  /dev/nvme0n1 > /dev/null 2>&1;
 then
         echo Formatting NVMe Drive...
@@ -28,7 +29,7 @@ else
         echo no SDD detected
 fi
 
-#Create Ethereum account
+# Create Ethereum account
 echo "Creating ethereum  user for Geth and Parity"
 if ! id -u ethereum >/dev/null 2>&1; then
         adduser --disabled-password --gecos "" ethereum
@@ -39,7 +40,7 @@ for GRP in sudo netdev audio video dialout plugdev bluetooth; do
 	adduser ethereum $GRP
 done
 
-#disable new account creation as we already have ethereum user
+# Disable new account creation as we already have ethereum user
 rm -rf /root/.not_logged_in_yet
 
 
