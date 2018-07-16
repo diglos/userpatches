@@ -26,35 +26,14 @@ case $RELEASE in
 	# Visit https://www.armbian.com for further info regarding image customization and Armbian itself
 	# Diego Losada <diego.losadaf@gmail.com>
 
-	# Assign unique hostname on first boot (ethnode-$MAC-HASH)
+	# Manage hostname, ethereum account and SSD device on first boot
 	cp /tmp/overlay/armbian_first_run.txt /boot
 	
-	# Create ethereum user and assign groups for Geth and Parity systemd daemon
-	#echo "Creating ethereum  user for Geth and Parity"
-	#if ! id -u ethereum >/dev/null 2>&1; then
-	#	adduser --disabled-password --gecos "" ethereum
-	#fi
-	#echo "ethereum:ethereum" | chpasswd
-	#for GRP in sudo netdev audio video dialout plugdev bluetooth; do
-  	#	adduser ethereum $GRP
-	#done	
-	
-	# Disable new account creation
-	#rm -rf /root/.not_logged_in_yet
-
-	# Install Geth and Parity Debian packages
-	# check ARCH and choose the right architecture (armhf or arm64)
-	echo "Installing Parity and Geth Debian packages"
-	#if [[ $ARCH == armhf ]]; then
-        #	dpkg -i /tmp/overlay/parity-rasp_1.6.8-0_armhf.deb
-	#	dpkg -i /tmp/overlay/geth-rasp_1.6.5-0_armhf.deb
-	#	dpkg -i /tmp/overlay/ipfs_0.4.9-0_armhf.deb
-	#else
-        #        dpkg -i /tmp/overlay/parity-rasp_1.6.8-0_arm64.deb
+	# Install Ethereum client packages
+	echo "Installing Parity and Geth Debian packages"	
 	dpkg -i /tmp/overlay/geth_1.8.12-0_arm64.deb
 	dpkg -i /tmp/overlay/parity_1.10.9-0_arm64.deb
-	#	dpkg -i /tmp/overlay/ipfs_0.4.9-0_arm64.deb
-	#fi
+
 	;;
 	trusty)
 	# your code here
