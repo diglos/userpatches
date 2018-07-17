@@ -28,7 +28,8 @@ case $RELEASE in
 
 	# Manage hostname, ethereum account and SSD device on first boot
 	cp /tmp/overlay/armbian_first_run.txt /boot
-	
+	cp -f /tmp/overlay/rc.local /etc
+	cp -f /tmp/overlay/first_reboot.sh /usr/local/bin	
 	# Install Ethereum client packages
 	echo "Installing Parity and Geth Debian packages"	
 	dpkg -i /tmp/overlay/geth_1.8.12-0_arm64.deb
