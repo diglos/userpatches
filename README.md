@@ -67,7 +67,7 @@ Please note that NanoPC T4 is not yet supported by Armbian so I'm using using Da
 
 https://github.com/hjc4869/armbian-build/tree/development
 
-#Install instructions for Linux
+# Install instructions for Linux
 
 Insert the MicroSD in your SD adapter and plug it into your computer. It is recommended to umount partitions in case that you have a preformated card.
 
