@@ -32,7 +32,7 @@ You can optionally:
 
 # What you need
 
-1. ARMBIAN compatible SoC (See https://www.armbian.com/download)
+1. ARMBIAN compatible SoC (Currently, only NanoPC-T4 tested)
 2. Micro SD Card and SD Adaptor
 3. NVMe SSD. **Keep in mind that without a NVMe SSD drive there’s absolutely no chance to sync the blockchain.**
 4. An ethernet cable
