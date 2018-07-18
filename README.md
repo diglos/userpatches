@@ -43,7 +43,7 @@ You can optionally:
 
 Currently, there is only one image available (NanoPC-T4):
 
-RELEASE PENDING
+http://www.ethraspbian.com/downloads/EthArmbian_5.45_Nanopct4_Debian_stretch_default_4.4.132.img.zip
 
 For other compatible devices please check the following instructions for building the image
 
