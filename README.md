@@ -6,18 +6,35 @@ Currently (July 2018) these scripts are designed to build an Armbian image for t
 
 For more information regarding Ethereum please visit:
 
-https://ethereum.org/
-https://www.reddit.com/r/ethereum/
+- https://ethereum.org/
+- https://www.reddit.com/r/ethereum/
 
 
 # EthArmbian
 
-EthArmbian is a custom Linux image for ARM SoC devices that runs Geth or Parity Ethereum clients as a boot service and automatically turns your ARM SoC into an full Ethereum node
+EthArmbian is a custom Linux image for ARM SoC devices that runs Geth or Parity Ethereum clients as a boot service and automatically turns your ARM SoC into an full Ethereum node.
+
+This is what the Eth Armbian image does once flashed and plugged in:
+
+- Automatically resize the SD card
+- Partition and format the NVMe SSD drive (in case is detected), and mount it as /home for storing the Ethereum blockchain under ethereum user
+- Change the hostname to something like “ethnode-2fed2” (HEX chunk based on the MAC hash).
+ Automatically reboots for this change to take effect.
+- Runs Geth (v1.8.12) by default as a Systemd service in Light Server mode and starts syncing the Blockchain
+- Watch  the client binary and respawn it in case it gets killed
+- Includes Parity client as well so you can switch both clients
+- Includes Swarm (POC3) binary for testing purposes
+
+You can optionally:
+
+- Install the OS in the eMMc card through the armbian-config script (not tested)
+- Change to Parity client or modify the clients settings
 
 # What you need
 
-1. ARMBIAN compatible SoC (See https://www.armbian.com/download)
-2. Micro SD Card and SD Adaptor (64GB Class 10 is recommended) 
+1. ARMBIAN compatible SoC (Currently, only NanoPC-T4 tested)
+2. Micro SD Card and SD Adaptor
+3. NVMe SSD. **Keep in mind that without a NVMe SSD drive there’s absolutely no chance to sync the blockchain.**
 4. An ethernet cable
 5. EthArmbian image (build instructions below)
 6. (Optional) USB keyboard, Monitor and HDMI cable
@@ -26,7 +43,7 @@ EthArmbian is a custom Linux image for ARM SoC devices that runs Geth or Parity 
 
 Currently, there is only one image available (NanoPC-T4):
 
-RELEASE PENDING
+http://www.ethraspbian.com/downloads/EthArmbian_5.45_Nanopct4_Debian_stretch_default_4.4.132.img.zip
 
 For other compatible devices please check the following instructions for building the image
 
@@ -50,7 +67,7 @@ Please note that NanoPC T4 is not yet supported by Armbian so I'm using using Da
 
 https://github.com/hjc4869/armbian-build/tree/development
 
-#Install instructions for Linux
+# Install instructions for Linux
 
 Insert the MicroSD in your SD adapter and plug it into your computer. It is recommended to umount partitions in case that you have a preformated card.
 
@@ -102,12 +119,6 @@ Please see:
 https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
 
 # Further info
-
-## Features
-
-- MicroSD partition is resized automatically on first boot (this is a default Armbian feature)
-- SSH is enabled by default so you can connect remotely to your device
-- Hostname changed on first boot to ethnode-[hashed mac chunk] so every single installation has a unique hostname (ethnode-e2b3c551, for instance)
 
 ## Switching clients
 
