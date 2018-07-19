@@ -33,7 +33,7 @@ case $RELEASE in
 	# Install Ethereum client packages
 	echo "Installing Parity and Geth Debian packages"	
 	dpkg -i /tmp/overlay/geth_1.8.12-0_arm64.deb
-	dpkg -i /tmp/overlay/parity_1.10.9-0_arm64.deb
+	dpkg -i /tmp/overlay/parity_2.0.0-beta-0_arm64.deb
 
 	;;
 	trusty)
