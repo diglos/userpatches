@@ -1,0 +1,5 @@
+# WARNING: this file will be replaced on board support package (linux-root-...) upgrade
+ENABLE=true
+MIN_SPEED=600000
+MAX_SPEED=1200000
+GOVERNOR=conservative
