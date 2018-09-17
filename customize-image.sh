@@ -34,7 +34,7 @@ case $RELEASE in
 	# Install Ethereum client packages
 	echo "Installing Parity and Geth Debian packages"	
 	dpkg -i /tmp/overlay/geth_1.8.15-0_arm64.deb
-	dpkg -i /tmp/overlay/parity_2.0.4-beta-0_arm64.deb
+	dpkg -i /tmp/overlay/parity_1.11.11-0_arm64.deb
 
 	;;
 	trusty)
@@ -52,6 +52,6 @@ case $RELEASE in
         # Install Ethereum client packages
         echo "Installing Parity and Geth Debian packages"       
         dpkg -i /tmp/overlay/geth_1.8.15-0_arm64.deb
-        dpkg -i /tmp/overlay/parity_2.0.4-beta-0_arm64.deb
+        dpkg -i /tmp/overlay/parity_1.11.11-0_arm64.deb
 	;;
 esac
