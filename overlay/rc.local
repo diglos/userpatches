@@ -15,12 +15,6 @@
 FLAG="/var/log/firstboot.log"
 if [ ! -f $FLAG ]; then
    touch $FLAG
-   # Create some swap memory for avoiding memory issues
-   mkdir -p /home/ethereum/swap
-   dd if=/dev/zero of=/home/ethereum/swap/swapfile bs=16k count=256k
-   chmod 600 /home/ethereum/swap/swapfile
-   mkswap /home/ethereum/swap/swapfile
-   echo "/home/ethereum/swap/swapfile none swap sw 0 0" >> /etc/fstab
    #Reboot once for hostname change and swap to take effect
    sleep 10
    /usr/local/bin/first_reboot.sh
