@@ -24,14 +24,20 @@ p
 w
 EOF
 mkfs.ext4 -F /dev/nvme0n1p1
-echo '/dev/nvme0n1p1 /home ext4 defaults 0 2' >> /etc/fstab 
+echo '/dev/nvme0n1p1 /home ext4 defaults 0 2' >> /etc/fstab && mount /home
+# Create some swap memory in the nvme device for avoiding memory issues
+mkdir -p /home/ethereum/swap
+dd if=/dev/zero of=/home/ethereum/swap/swapfile bs=16k count=256k
+chmod 600 /home/ethereum/swap/swapfile
+mkswap /home/ethereum/swap/swapfile
+swapon /home/ethereum/swap/swapfile
+echo "/home/ethereum/swap/swapfile none swap sw 0 0" >> /etc/fstab
 
 else
         echo no SDD detected
 fi
 
 # Create Ethereum account
-mount /home
 echo "Creating ethereum  user for Geth and Parity"
 if ! id -u ethereum >/dev/null 2>&1; then
         adduser --disabled-password --gecos "" ethereum
@@ -41,13 +47,6 @@ echo "ethereum:ethereum" | chpasswd
 for GRP in sudo netdev audio video dialout plugdev bluetooth; do
 	adduser ethereum $GRP
 done
-
-# Create some swap memory in the nvme device for avoiding memory issues
-mkdir -p /home/ethereum/swap
-dd if=/dev/zero of=/home/ethereum/swap/swapfile bs=16k count=256k
-chmod 600 /home/ethereum/swap/swapfile
-mkswap /home/ethereum/swap/swapfile
-echo "/home/ethereum/swap/swapfile none swap sw 0 0" >> /etc/fstab
 
 # Disable new account creation as we already have ethereum user
 rm -rf /root/.not_logged_in_yet
