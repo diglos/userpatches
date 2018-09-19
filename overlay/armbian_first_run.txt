@@ -1,3 +1,4 @@
+#!/bin/sh
 #-----------------------------------------------------------------
 # Armbian first run configuration
 # Set optional end user configuration
@@ -23,7 +24,7 @@ p
 w
 EOF
 mkfs.ext4 -F /dev/nvme0n1p1
-echo '/dev/nvme0n1p1 /home ext4 defaults 0 2' >> /etc/fstab && mount /dev/nvme0n1p1 /home
+echo '/dev/nvme0n1p1 /home ext4 defaults 0 2' >> /etc/fstab 
 
 else
         echo no SDD detected
