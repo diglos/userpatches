@@ -63,7 +63,9 @@ You are all set. Take into account that the installer needs to perform some oper
 
 For a full Ethereum node to be online the whole blockchain needs to be synced (to the very last block) so it will take some time to get there (see the FAQ section).
 
-## Flashing the EthArmbian image. MicroSD Install instructions for Linux
+## Flashing the EthArmbian image
+
+### MicroSD Install instructions for Linux
 
 Insert the MicroSD in your SD adapter and plug it into your desktop or laptop computer. It is recommended to umount partitions in case  you have a preformated card.
 
@@ -90,13 +92,13 @@ sudo dd bs=1M if=Armbian_5.60_Nanopct4_Ubuntu_bionic_default_4.4.156.img of=/dev
 
 You are done. Insert the MicroSD into your ARM SoC and power it on.
 
-## Instructions for Windows
+### Instructions for Windows
 
 Please see:
 
 https://www.raspberrypi.org/documentation/installation/installing-images/windows.md
 
-## Instructions for Mac
+### Instructions for Mac
 
 Please see:
 
