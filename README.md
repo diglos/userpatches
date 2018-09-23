@@ -33,7 +33,7 @@ These are the main EthArmbian features:
 
 1. Friendly Elec NanoPC-T4 ARM SoC [1]
 2. Micro SD Card and SD Adaptor (for flashing the MicroSD)
-3. NVMe M.2 SSD (minimum 256GB). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance to sync the blockchain.**
+3. NVMe M.2 SSD (minimum 256GB). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance of syncing the blockchain**
 4. An ethernet cable
 5. EthArmbian image, download link below (see build instructions if you don't own a NanoPC-T4)
 6. (Optional) 30303 Port forwarding. This is a recommended setting (see below)
@@ -52,12 +52,12 @@ For other compatible devices please check below instructions for building the im
 
 ## In a nutshell
 
-1.- Flash the Armbian Image on your MicroSD Card (in your desktop or laptop computer, see below for detailed instructions)
-2.- Get the NanoPC-T4
-3.- Plug in the MicroSD card
-4.- Plug in the NVMe M.2 SSD drive
-5.- Plug in the Ethernet cable
-6.- Power on the board
+1. Flash the Armbian Image on your MicroSD Card (in your desktop or laptop computer, see below for detailed instructions)
+2. Get the NanoPC-T4
+3. Plug in the MicroSD card
+4. Plug in the NVMe M.2 SSD drive
+5. Plug in the Ethernet cable
+6. Power on the board
 
 You are all set. Take into account that the installer needs to perform some operations before it wakes up so you may need to wait about 1 minute
 
