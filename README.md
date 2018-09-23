@@ -40,7 +40,7 @@ These are the main EthArmbian features:
 7. (Optional) USB keyboard, Monitor and HDMI cable
 
 
-# Image
+# EthArmbian Image
 
 Currently, there is only one image available for the Nanopc-T4 ARM Soc:
 
@@ -59,11 +59,11 @@ For other compatible devices please check below instructions for building the im
 5. Plug in the Ethernet cable
 6. Power on the board
 
-You are all set. Take into account that the installer needs to perform some operations before it wakes up so you may need to wait about 1 minute.
+You are all set. Take into account that the installer needs to perform some operations before it wakes up so you may need to wait about 1 minute (this includes 1 reboot).
 
 For a full Ethereum node to be online the whole blockchain needs to be synced (to the very last block) so it will take some time to get there (see the FAQ section).
 
-## MicroSD Install instructions for Linux
+## Flashing the EthArmbian image. MicroSD Install instructions for Linux
 
 Insert the MicroSD in your SD adapter and plug it into your desktop or laptop computer. It is recommended to umount partitions in case  you have a preformated card.
 
@@ -71,11 +71,11 @@ Note: If you are not comfortable with command line, you can use Etcher:
 
 https://etcher.io/
 
-1. Check your MicroSD device name running:
+1. Open a terminal and check your MicroSD device name running:
 
 `sudo fdisk -l`
 
-You should see a device named `mmcblk0` or `sdd` (that matchs with the size of your card. This is a dangerous operation, be careful). For further info please visit:
+You should see a device named `mmcblk0` or `sdd` (that matchs with the size of your card. This is a dangerous operation so be careful). For further info please visit:
 
 https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
 
@@ -88,7 +88,7 @@ sudo dd bs=1M if=Armbian_5.60_Nanopct4_Ubuntu_bionic_default_4.4.156.img of=/dev
 
 3. Extract the MicroSD card
 
-You are done. Insert the MicroSD in your ARM SoC and power it on.
+You are done. Insert the MicroSD into your ARM SoC and power it on.
 
 ## Instructions for Windows
 
@@ -107,7 +107,7 @@ https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
 If you are going to run a full Ethereum node you may forward the 30303 port from your router to your device. This is an optional but recommended setting. There are 2 ways of doing this:
 
 - Enable uPNP on your router. This automates the forwarding process (geth and parity take care of it), but it is less secure
-- Forward the 30303 port to your NanoPC-T4 IP on your router. There are plenty of tutorials out there for doing this as it depends on your router model.
+- Forward the 30303 port to your NanoPC-T4 IP on your router. There are plenty of tutorials out there for doing this (it depends on your router model)
 
 ## Switching clients
 
@@ -132,12 +132,7 @@ Geth and Parity run as a bootup service so the client wakes up automatically. Yo
 
 ### Changing settings
 
-Both clients settings are stored on /etc/ethereum/ directory (geth.conf for geth and parity.conf for parity), so you just have to edit these files and restart the daemon, for instance, changing cache value in geth:
-
-```
-sudo echo ARGS="--cache 2048" > /etc/ethereum/geth.conf
-sudo systemctl restart geth
-```
+Both clients settings are stored on /etc/ethereum/ directory (geth.conf file for geth and parity.conf file for parity), so you just have to edit these files and restart the daemon, for instance, changing cache value in geth:
 
 # FAQ
 
@@ -145,7 +140,7 @@ These are some common asked questions:
 
 ## How do I connect to the board?
 
-You can use SSH or a Monitor + USB keyboard. If you don't have a monitor connected you can discover the Nano IP by connecting to your router or using tools like nmap (and use SSH).
+You can use SSH or a Monitor + USB keyboard. If you don't have a monitor connected you can discover the Nano IP by connecting to your router or using tools like nmap in order to connect though SSH.
 
 ## How can I log in?
 
@@ -167,11 +162,11 @@ Password: 1234 (you will be prompted to change the default password the first ti
 
 ## How long does it take to sync the Ethereum blockchain? 
 
-For Parity client, just a few hours (5-6). Geth takes 2 and a half days. (as of September 2018).
+For Parity client, just a few hours (4-5). Geth takes 2 and a half days. (as of September 2018).
 
-## What is the blockchain size once synced?
+## Which is the blockchain size once synced?
 
-For Parity, 33 GB. For Geth about 127GB. (as of September 2018)
+For Parity, 33 GB. For Geth, about 127GB. (as of September 2018)
 
 ## I'm seeing lots of "Database compacting, degraded performance" messages (geth)
 
@@ -184,6 +179,24 @@ https://github.com/ethereum/go-ethereum/issues/16871#issuecomment-395372313
 No, not yet. You will need to wait for the whole import process to finish (as of September 2018, about 218 million state entries). More info:
 
 [Karalabe Geth syncing explanation](https://github.com/ethereum/go-ethereum/issues/16218#issuecomment-371454280)
+
+## The snapshot synchronization is stuck (parity).
+
+The most probably reason is that the snapshot is no longer available (it changes from time to time). Just stop parity, remove the data and restart the sync process by running:
+
+```
+sudo systemctl stop parity
+sudo rm -rf /home/ethereum/.local/share/io.parity.ethereum/
+sudo systemctl start parity
+```
+
+## Time is not accurate or the Time Zone is incorrect
+
+Run the following command to sync time and change the Time Zone
+
+`sudo armbian-config`
+
+Go to "Personal" --> "Time zone" and choose the correct one.
 
 ## Is it possible to sync the blockchain with a SD card or a HDD drive?
 
@@ -205,7 +218,7 @@ These links are a good start:
 By running one of these commands (depends on the client):
 ```
 systemctl status geth
-systemctl -l status parity
+systemctl status parity
 ```
 Also, by running:
 
