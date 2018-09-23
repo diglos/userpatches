@@ -33,7 +33,7 @@ These are the main EthArmbian features:
 
 1. Friendly Elec NanoPC-T4 ARM SoC [1]
 2. Micro SD Card and SD Adaptor (for flashing the MicroSD)
-3. NVMe M.2 SSD (minimum 256GB). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance to sync the blockchain.**
+3. NVMe M.2 SSD (minimum 256GB). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance of syncing the blockchain.**
 4. An ethernet cable
 5. EthArmbian image, download link below (see build instructions if you don't own a NanoPC-T4)
 6. (Optional) 30303 Port forwarding. This is a recommended setting (see below)
@@ -197,26 +197,26 @@ Both clients are great. If you want to keep the blockchain size as low as possib
 
 These links are a good start:
 
-[Karalabe Geth syncing explanation](https://github.com/ethereum/go-ethereum/issues/16218#issuecomment-371454280)
-[Geth and Parity syncing explained by Afri Schoedon](https://dev.to/5chdn/the-ethereum-blockchain-size-will-not-exceed-1tb-anytime-soon-58a)
+- [Karalabe Geth syncing explanation](https://github.com/ethereum/go-ethereum/issues/16218#issuecomment-371454280)
+- [Geth and Parity syncing explained by Afri Schoedon](https://dev.to/5chdn/the-ethereum-blockchain-size-will-not-exceed-1tb-anytime-soon-58a)
 
 ## Where can I see Geth or Parity logs?
 
 By running one of these commands (depends on the client):
-
+```
 systemctl status geth
 systemctl -l status parity
-
+```
 Also, by running:
 
-tail -f /var/log/syslog
+`tail -f /var/log/syslog`
 
 ## Links
 
-[1] https://www.friendlyarm.com/index.php?route=product/product&product_id=225
-[2] https://www.armbian.com
-[3] https://github.com/ethereum/go-ethereum
-[4] https://github.com/paritytech/parity-ethereum
+- [1] https://www.friendlyarm.com/index.php?route=product/product&product_id=225
+- [2] https://www.armbian.com
+- [3] https://github.com/ethereum/go-ethereum
+- [4] https://github.com/paritytech/parity-ethereum
 
 # Armbian image build instructions (for other devices)
 
