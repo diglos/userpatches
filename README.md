@@ -2,7 +2,7 @@
 
 This is a custom configuration for creating an Ethereum full node based on the Armbian build tools. Please visit https://www.armbian.com and https://github.com/igorpecovnik/lib for further info regarding ARMBIAN.
 
-Currently (September 2018) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
+Currently (as of September 2018) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
 
 For more information regarding Ethereum please visit:
 
@@ -167,21 +167,21 @@ Password: 1234 (you will be prompted to change the default password the first ti
 
 ## How long does it take to sync the Ethereum blockchain? 
 
-For Parity client, just a few hours (5-6). Geth takes 2 and a half days. (September 2018).
+For Parity client, just a few hours (5-6). Geth takes 2 and a half days. (as of September 2018).
 
 ## What is the blockchain size once synced?
 
-For Parity, 33 GB. For Geth about 127GB. (September 2018)
+For Parity, 33 GB. For Geth about 127GB. (as of September 2018)
 
-## I'm seeing lots of "Database compacting, degraded performance" messages
+## I'm seeing lots of "Database compacting, degraded performance" messages (geth)
 
 You are fine. This is an expected behaviour in LevelDB databases. See:
 
 https://github.com/ethereum/go-ethereum/issues/16871#issuecomment-395372313
 
-## I'm seeing lots of "Imported new state entries" messages, is the node synced?
+## I'm seeing lots of "Imported new state entries" messages, is the node synced? (geth)
 
-No, not yet. You will need to wait for the whole import process to finish (Currently, September 2018, about 218 million state entries). More info:
+No, not yet. You will need to wait for the whole import process to finish (as of September 2018, about 218 million state entries). More info:
 
 [Karalabe Geth syncing explanation](https://github.com/ethereum/go-ethereum/issues/16218#issuecomment-371454280)
 
