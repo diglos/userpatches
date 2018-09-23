@@ -242,4 +242,4 @@ https://docs.armbian.com/
 
 If you want to support EthArmbian you can drop some Ether here :-)
 
-`0x7ce2950AD4Dba4B75564ed4a5c302743Bfd90Aeb`
+`0x10BE809ad5F8Da1C675A26344E05cD9b56De6306`
