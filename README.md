@@ -33,7 +33,7 @@ These are the main EthArmbian features:
 
 1. Friendly Elec NanoPC-T4 ARM SoC [1]
 2. Micro SD Card and SD Adaptor (for flashing the MicroSD)
-3. NVMe M.2 SSD (minimum 256GB). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance of syncing the blockchain**
+3. NVMe M.2 SSD (minimum 256GB). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance to sync the blockchain.**
 4. An ethernet cable
 5. EthArmbian image, download link below (see build instructions if you don't own a NanoPC-T4)
 6. (Optional) 30303 Port forwarding. This is a recommended setting (see below)
@@ -59,7 +59,7 @@ For other compatible devices please check below instructions for building the im
 5. Plug in the Ethernet cable
 6. Power on the board
 
-You are all set. Take into account that the installer needs to perform some operations before it wakes up so you may need to wait about 1 minute
+You are all set. Take into account that the installer needs to perform some operations before it wakes up so you may need to wait about 1 minute.
 
 For a full Ethereum node to be online the whole blockchain needs to be synced (to the very last block) so it will take some time to get there (see the FAQ section).
 
@@ -243,52 +243,3 @@ https://docs.armbian.com/
 If you want to support EthArmbian you can drop some Ether here :-)
 
 `0x7ce2950AD4Dba4B75564ed4a5c302743Bfd90Aeb`
-
-Pasos uno por uno
-cuanto ocupa la blockchain y cuanto tiempo tardan en sincronizar
-
-1.- Flash the Armbian Image on your SD Card
-2.- Plug in the MicroSD card
-3.- Plug in the NVMe device
-4.- Plug in the Ethernet cable
-5.- Power on the board
-
-
-
-
-
-
-Pasos uno por uno
-cuanto ocupa la blockchain y cuanto tiempo tardan en sincronizar
-
-1.- Flash the Armbian Image on your SD Card
-2.- Plug in the MicroSD card
-3.- Plug in the NVMe device
-4.- Plug in the Ethernet cable
-5.- Power on the board
-
-You are all set. Connect to the board though SSH or by plugin an HDMI cable and a USB keyboard.
-
-Apartado de blockchain sync
-
-For a full Ethereum node to work the whole blockchain needs to be synced (to the very last block) so it takes some time to get there. These are com 
-
-How long does it take to sync the blockchain? (as of September 2018)
-
-For parity, just a few hours (5-6). Geth can take 3-4 days.
-
-What is the blockchain size once synced?
-
-For parity, 33 GB. For Ethereum about 104GB
-
-Which client is better?
-
-Where can I find more info about the blockchain synchronization?
-
-
-
-
- 
-NVMe drive
-time to sync
-differences in both clients
