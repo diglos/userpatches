@@ -139,15 +139,15 @@ sudo echo ARGS="--cache 2048" > /etc/ethereum/geth.conf
 sudo systemctl restart geth
 ```
 
-#FAQ
+# FAQ
 
 These are some common asked questions:
 
-##How do I connect to the board?
+## How do I connect to the board?
 
 You can use SSH or a Monitor + USB keyboard. If you don't have a monitor connected you can discover the Nano IP by connecting to your router or using tools like nmap (and use SSH).
 
-##How can I log in?
+## How can I log in?
 
 ```
 User: ethereum 
@@ -165,42 +165,42 @@ User: root
 Password: 1234 (you will be prompted to change the default password the first time you log in)
 ```
 
-##How long does it take to sync the Ethereum blockchain? 
+## How long does it take to sync the Ethereum blockchain? 
 
 For Parity client, just a few hours (5-6). Geth takes 2 and a half days. (September 2018).
 
-##What is the blockchain size once synced?
+## What is the blockchain size once synced?
 
 For Parity, 33 GB. For Geth about 127GB. (September 2018)
 
-##I'm seeing lots of "Database compacting, degraded performance" messages
+## I'm seeing lots of "Database compacting, degraded performance" messages
 
 You are fine. This is an expected behaviour in LevelDB databases. See:
 
 https://github.com/ethereum/go-ethereum/issues/16871#issuecomment-395372313
 
-##I'm seeing lots of "Imported new state entries" messages, is the node synced?
+## I'm seeing lots of "Imported new state entries" messages, is the node synced?
 
 No, not yet. You will need to wait for the whole import process to finish (Currently, September 2018, about 218 million state entries). More info:
 
 [Karalabe Geth syncing explanation](https://github.com/ethereum/go-ethereum/issues/16218#issuecomment-371454280)
 
-##Is it possible to sync the blockchain with a SD card or a HDD drive?
+## Is it possible to sync the blockchain with a SD card or a HDD drive?
 
 Absolutely not. You will need an NVMe M.2 SSD Drive.
 
-##Which client is better?
+## Which client is better?
 
 Both clients are great. If you want to keep the blockchain size as low as possible and sync ASAP, Parity is probably the best option. If you want to support light clients or test swarm, you may go for Geth.
 
-##Where can I find more info about the blockchain synchronization?
+## Where can I find more info about the blockchain synchronization?
 
 These links are a good start:
 
 [Karalabe Geth syncing explanation](https://github.com/ethereum/go-ethereum/issues/16218#issuecomment-371454280)
 [Geth and Parity syncing explained by Afri Schoedon](https://dev.to/5chdn/the-ethereum-blockchain-size-will-not-exceed-1tb-anytime-soon-58a)
 
-##Where can I see Geth or Parity logs?
+## Where can I see Geth or Parity logs?
 
 By running one of these commands (depends on the client):
 
