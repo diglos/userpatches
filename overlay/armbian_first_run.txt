@@ -16,6 +16,9 @@ if stat  /dev/nvme0n1 > /dev/null 2>&1;
 then
         echo Formatting NVMe Drive...
         fdisk /dev/nvme0n1 <<EOF
+d
+1
+
 n
 p
 1
