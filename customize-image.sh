@@ -51,7 +51,7 @@ case $RELEASE in
 	cp -f /tmp/overlay/cpufrequtils /etc/default
         # Install Ethereum client packages
         echo "Installing Parity and Geth Debian packages"       
-        dpkg -i /tmp/overlay/geth_1.8.15-0_arm64.deb
-        dpkg -i /tmp/overlay/parity_2.0.5-0_arm64.deb
+        dpkg -i /tmp/overlay/geth_1.8.19-0_arm64.deb
+        dpkg -i /tmp/overlay/parity_2.2.2-0_arm64.deb
 	;;
 esac
