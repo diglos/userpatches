@@ -44,7 +44,7 @@ These are the main EthArmbian features:
 
 Currently, there is only one image available for the Nanopc-T4 ARM Soc:
 
-http://www.ethraspbian.com/downloads/Armbian_5.60_Nanopct4_Ubuntu_bionic_default_4.4.156.img.zip
+http://ethraspbian.com/downloads/Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
