@@ -84,8 +84,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 2. Flash the MicroSD:
 
 ```
-unzip Armbian_5.60_Nanopct4_Ubuntu_bionic_default_4.4.156.img.zip
-sudo dd bs=1M if=Armbian_5.60_Nanopct4_Ubuntu_bionic_default_4.4.156.img of=/dev/mmcblk0 && sync
+unzip Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166.img.zip
+sudo dd bs=1M if=Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166.img of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
