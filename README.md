@@ -44,7 +44,7 @@ These are the main EthArmbian features:
 
 Currently, there is only one image available for the Nanopc-T4 ARM Soc:
 
-http://ethraspbian.com/downloads/Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166.img.zip
+http://ethraspbian.com/downloads/Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166-1.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -84,8 +84,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 2. Flash the MicroSD:
 
 ```
-unzip Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166.img.zip
-sudo dd bs=1M if=Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166.img of=/dev/mmcblk0 && sync
+unzip Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166-1.img.zip
+sudo dd bs=1M if=Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166-1.img.zip of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
