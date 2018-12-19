@@ -42,9 +42,10 @@ These are the main EthArmbian features:
 
 # EthArmbian Image
 
-Currently, there is only one image available for the Nanopc-T4 ARM Soc:
+Currently, there are 2 images available for the Nanopc-T4 ARM Soc, one with Geth as default client and the other with Parity. The images are Constantinople hardfork-ready:
 
-http://ethraspbian.com/downloads/Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166-1.img.zip
+http://ethraspbian.com/downloads/EthArmbian_5.67_Nanopct4_Ubuntu_bionic_default_constantinople-geth.img.zip
+http://ethraspbian.com/downloads/EthArmbian_5.67_Nanopct4_Ubuntu_bionic_default_constantinople-parity.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -83,9 +84,11 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 
 2. Flash the MicroSD:
 
+Installing Geth image:
+
 ```
-unzip Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166-1.img.zip
-sudo dd bs=1M if=Armbian_5.67_Nanopct4_Ubuntu_bionic_default_4.4.166-1.img.zip of=/dev/mmcblk0 && sync
+unzip EthArmbian_5.67_Nanopct4_Ubuntu_bionic_default_constantinople-geth.img.zip
+sudo dd bs=1M if=EthArmbian_5.67_Nanopct4_Ubuntu_bionic_default_constantinople-geth.img of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
