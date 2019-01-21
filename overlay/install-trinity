@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$(id -u)" = "0" ]; then
+   echo "Please run this script under the ethereum user account. Type: su - ethereum and launch the script again" 1>&2
+   exit 1
+fi
+
+sudo apt-get install -y python3-pip python3-setuptools libgcc1-arm64-cross python3-dev libffi-dev python3-wheel libgmp-dev python3-lxml libleveldb-dev libxml2-dev libxslt1-dev
+sudo pip3 install -U trinity
+
+exit 0

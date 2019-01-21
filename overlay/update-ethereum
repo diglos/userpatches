@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /tmp
+wget https://ethraspbian.com/downloads/geth_latest_arm64.deb https://ethraspbian.com/downloads/parity_latest_arm64.deb
+sudo dpkg -i geth_latest_arm64.deb parity_latest_arm64.deb
+exit 0
+
