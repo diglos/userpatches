@@ -1,13 +1,16 @@
 #!/bin/bash
 
 if [ "$(id -u)" = "0" ]; then
-   echo "Please run this script under the ethereum user account. Type: su - ethereum and launch the script again" 1>&2
+   echo "Please run this script under the ethereum user account. Type: su - ethereum and try again" 1>&2
    exit 1
 fi
 
+sudo apt-get install libpq-dev libjpeg-dev
+cd ~
 git clone https://github.com/raiden-network/raiden.git
-cd raiden
-pip install -c constraints.txt --upgrade -r requirements-dev.txt
-sudo python setup.py develop
+cd ~/raiden
+pip3 install -c constraints.txt --upgrade -r requirements-dev.txt
+sudo python3 setup.py develop
 
 exit 0
+
