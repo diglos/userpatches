@@ -6,13 +6,15 @@
 #	- Settings below will be applied on 1st run of Armbian
 #-----------------------------------------------------------------
 
+touch /tmp/first_run_lock
+
 # Modify hostname (ethnode-$MAC-HASH-CHUNK)
 MAC_HASH=`cat /sys/class/net/eth0/address | sha256sum | awk '{print substr($0,0,9)}'`
 echo ethnode-$MAC_HASH > /etc/hostname
 sed -i "s/127.0.1.1.*/127.0.1.1\tethnode-$MAC_HASH/g" /etc/hosts
 
 # Format NVMe SSD and mount it as /home
-touch /tmp/format_lock
+
 if stat  /dev/nvme0n1 > /dev/null 2>&1;
 then
         echo Formatting NVMe Drive...
@@ -68,7 +70,7 @@ echo "vm.min_free_kbytes=65536" >> /etc/sysctl.conf
 #	SECURITY WARN: Even if this file is deleted, it may still be accessible by recovery methods.
 FR_general_delete_this_file_after_completion=1
 
-rm -f /tmp/format_lock
+rm -f /tmp/first_run_lock
 
 #-----------------------------------------------------------------
 #Networking:
