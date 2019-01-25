@@ -31,7 +31,6 @@ echo '/dev/nvme0n1p1 /home ext4 defaults 0 2' >> /etc/fstab && mount /home
 else
         echo no SDD detected
 fi
-rm -f /tmp/format_lock
 
 # Create Ethereum account
 echo "Creating ethereum  user for Geth and Parity"
@@ -68,6 +67,8 @@ echo "vm.min_free_kbytes=65536" >> /etc/sysctl.conf
 # 1 = delete this file, after first run setup is completed.
 #	SECURITY WARN: Even if this file is deleted, it may still be accessible by recovery methods.
 FR_general_delete_this_file_after_completion=1
+
+rm -f /tmp/format_lock
 
 #-----------------------------------------------------------------
 #Networking:
