@@ -16,7 +16,7 @@ FLAG="/var/log/firstboot.log"
 if [ ! -f $FLAG ]; then
    touch $FLAG
    #Reboot once for hostname change and swap to take effect
-   while [ -f /tmp/format_lock ]; do sleep 5; done
+   while [ -f /tmp/first_run_lock ]; do sleep 5; done
    /usr/local/bin/first_reboot.sh
    
 else
