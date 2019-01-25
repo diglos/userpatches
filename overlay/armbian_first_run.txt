@@ -12,6 +12,7 @@ echo ethnode-$MAC_HASH > /etc/hostname
 sed -i "s/127.0.1.1.*/127.0.1.1\tethnode-$MAC_HASH/g" /etc/hosts
 
 # Format NVMe SSD and mount it as /home
+touch /tmp/format_lock
 if stat  /dev/nvme0n1 > /dev/null 2>&1;
 then
         echo Formatting NVMe Drive...
@@ -30,6 +31,7 @@ echo '/dev/nvme0n1p1 /home ext4 defaults 0 2' >> /etc/fstab && mount /home
 else
         echo no SDD detected
 fi
+rm -f /tmp/format_lock
 
 # Create Ethereum account
 echo "Creating ethereum  user for Geth and Parity"
