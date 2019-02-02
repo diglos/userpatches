@@ -40,12 +40,14 @@ These are the main EthArmbian features:
 7. (Optional) USB keyboard, Monitor and HDMI cable
 
 
-# EthArmbian Image
+# EthArmbian Images
 
-Currently, there are 2 images available for the Nanopc-T4 ARM Soc, one with Geth as default client and the other with Parity. The images are Constantinople hardfork-ready:
+Current release date: 2019/02/02. Parity 2.2.8 and Geth 1.8.22. These images are ready for Constantinople and Petersburg Hardforks.
 
-http://ethraspbian.com/downloads/EthArmbian_5.67_Nanopct4_Ubuntu_bionic_default_constantinople-geth.img.zip
-http://ethraspbian.com/downloads/EthArmbian_5.67_Nanopct4_Ubuntu_bionic_default_constantinople-parity.img.zip
+There are 2 images available for the Nanopc-T4 ARM Soc, one with Geth as default client and the other with Parity.
+
+https://ethraspbian.com/downloads/Armbian_5.74_Nanopct4_Ubuntu_bionic_default_4.4.172-1-geth.img.zip
+https://ethraspbian.com/downloads/Armbian_5.74_Nanopct4_Ubuntu_bionic_default_4.4.172-1-parity.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -87,8 +89,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 Installing Geth image:
 
 ```
-unzip EthArmbian_5.67_Nanopct4_Ubuntu_bionic_default_constantinople-geth.img.zip
-sudo dd bs=1M if=EthArmbian_5.67_Nanopct4_Ubuntu_bionic_default_constantinople-geth.img of=/dev/mmcblk0 && sync
+unzip Armbian_5.74_Nanopct4_Ubuntu_bionic_default_4.4.172-1-geth.img.zip
+sudo dd bs=1M if=Armbian_5.74_Nanopct4_Ubuntu_bionic_default_4.4.172-1-geth.img of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
