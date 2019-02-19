@@ -233,6 +233,12 @@ Also, by running:
 
 `tail -f /var/log/syslog`
 
+You can also monitor a tail of the log of any service running in the background like so:
+
+```bash
+sudo journalctl -u geth -f
+```
+
 ## Links
 
 - [1] https://www.friendlyarm.com/index.php?route=product/product&product_id=225
