@@ -42,9 +42,15 @@ These are the main EthArmbian features:
 
 # EthArmbian Images
 
-Current release date: 2019/02/03
+**Current image release date**: 2019/02/03
 
 Parity 2.2.9 and Geth 1.8.22. These images are ready for Constantinople and Petersburg Hardforks.
+
+**Current Geth and Parity packages version**: 2019/02/21
+
+Parity 2.2.11 and Geth 1.8.23
+
+Run "update-ethereum" command to update to the latest versions.
 
 There are 2 images available for the Nanopc-T4 ARM Soc, one with Geth as default client and the other with Parity.
 
