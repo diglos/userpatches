@@ -48,14 +48,14 @@ Parity 2.2.11 and Geth 1.8.23
 
 Run "update-ethereum" command to update to the latest versions.
 
-**Current image release date**: 2019/02/03
+**Current image release date**: 2019/02/23
 
-Parity 2.2.9 and Geth 1.8.22. These images are ready for Constantinople and Petersburg Hardforks.
+Parity 2.2.11 and Geth 1.8.23. These images are ready for Constantinople and Petersburg Hardforks.
 
 There are 2 images available for the Nanopc-T4 ARM Soc, one with Geth as default client and the other with Parity.
 
-https://ethraspbian.com/downloads/Armbian_5.74_Nanopct4_Ubuntu_bionic_default_4.4.172-1-geth.img.zip
-https://ethraspbian.com/downloads/Armbian_5.74_Nanopct4_Ubuntu_bionic_default_4.4.172-2-parity.img.zip
+https://ethraspbian.com/downloads/Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-geth.img.zip
+https://ethraspbian.com/downloads/Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-parity.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -97,8 +97,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 Installing Geth image:
 
 ```
-unzip Armbian_5.74_Nanopct4_Ubuntu_bionic_default_4.4.172-1-geth.img.zip
-sudo dd bs=1M if=Armbian_5.74_Nanopct4_Ubuntu_bionic_default_4.4.172-1-geth.img of=/dev/mmcblk0 && sync
+unzip Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-geth.img.zip
+sudo dd bs=1M if=Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-geth.img of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
