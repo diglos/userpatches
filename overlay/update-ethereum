@@ -3,6 +3,6 @@
 cd /tmp
 wget https://ethraspbian.com/downloads/geth_latest_arm64.deb -O geth_latest_arm64.deb
 wget https://ethraspbian.com/downloads/parity_latest_arm64.deb -O parity_latest_arm64.deb
-sudo dpkg -i --skip-same-version --refuse-downgrade geth_latest_arm64.deb parity_latest_arm64.deb
+sudo dpkg -i --force-confold --skip-same-version --refuse-downgrade geth_latest_arm64.deb parity_latest_arm64.deb
 exit 0
 
