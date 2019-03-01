@@ -32,7 +32,6 @@ case $RELEASE in
 	cp -f /tmp/overlay/first_reboot.sh /usr/local/bin	
 	cp -f /tmp/overlay/update-ethereum /usr/local/bin
         cp -f /tmp/overlay/install-trinity /usr/local/bin
-        cp -f /tmp/overlay/install-raiden /usr/local/bin
 	cp -f /tmp/overlay/cpufrequtils /etc/default
 	# Install Ethereum client packages
 	echo "Installing Parity and Geth Debian packages"	
@@ -40,6 +39,7 @@ case $RELEASE in
         dpkg -i /tmp/overlay/parity_2.2.11-0_arm64.deb
 	dpkg -i /tmp/overlay/ipfs_0.4.18-0_arm64.deb
         dpkg -i /tmp/overlay/status.im-node-0.19.0-beta3_arm64.deb
+	dpkg -i /tmp/overlay/raiden_0.100.2-0_arm64.deb
 
 	;;
 	trusty)
@@ -55,7 +55,6 @@ case $RELEASE in
         cp -f /tmp/overlay/first_reboot.sh /usr/local/bin
 	cp -f /tmp/overlay/update-ethereum /usr/local/bin
 	cp -f /tmp/overlay/install-trinity /usr/local/bin
-	cp -f /tmp/overlay/install-raiden /usr/local/bin
 	cp -f /tmp/overlay/cpufrequtils /etc/default
         # Install Ethereum client packages
         echo "Installing Parity and Geth Debian packages"       
@@ -63,5 +62,6 @@ case $RELEASE in
 	dpkg -i /tmp/overlay/geth_1.8.23-0_arm64.deb
 	dpkg -i /tmp/overlay/ipfs_0.4.18-0_arm64.deb
 	dpkg -i /tmp/overlay/status.im-node-0.19.0-beta3_arm64.deb
+	dpkg -i /tmp/overlay/raiden_0.100.2-0_arm64.deb
 	;;
 esac
