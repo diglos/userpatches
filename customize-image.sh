@@ -38,7 +38,7 @@ case $RELEASE in
 	dpkg -i /tmp/overlay/geth_1.8.23-0_arm64.deb
         dpkg -i /tmp/overlay/parity_2.3.8-0_arm64.deb
 	dpkg -i /tmp/overlay/ipfs_0.4.18-0_arm64.deb
-        dpkg -i /tmp/overlay/status.im-node-0.19.0-beta3_arm64.deb
+        dpkg -i /tmp/overlay/status.im-node-0.23.8-0-beta8chaos_arm64.deb
 	dpkg -i /tmp/overlay/raiden_0.100.2-0_arm64.deb
 
 	;;
@@ -61,7 +61,7 @@ case $RELEASE in
         dpkg -i /tmp/overlay/parity_2.3.8-0_arm64.deb
 	dpkg -i /tmp/overlay/geth_1.8.23-0_arm64.deb
 	dpkg -i /tmp/overlay/ipfs_0.4.18-0_arm64.deb
-	dpkg -i /tmp/overlay/status.im-node-0.19.0-beta3_arm64.deb
+	dpkg -i /tmp/overlay/status.im-node-0.23.8-0-beta8chaos_arm64.deb
 	dpkg -i /tmp/overlay/raiden_0.100.2-0_arm64.deb
 	;;
 esac
