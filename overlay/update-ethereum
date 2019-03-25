@@ -3,6 +3,10 @@
 cd /tmp
 wget https://ethraspbian.com/downloads/geth_latest_arm64.deb -O geth_latest_arm64.deb
 wget https://ethraspbian.com/downloads/parity_latest_arm64.deb -O parity_latest_arm64.deb
-sudo dpkg -i --force-confold --skip-same-version --refuse-downgrade geth_latest_arm64.deb parity_latest_arm64.deb
-exit 0
+wget https://ethraspbian.com/downloads/ipfs_latest_arm64.deb -O ipfs_latest_arm64.deb
+wget https://ethraspbian.com/downloads/raiden_latest_arm64.deb -O raiden_latest_arm64.deb
+wget https://ethraspbian.com/downloads/status.im-node_latest_arm64.deb -O status.im-node_latest_arm64.deb
 
+sudo dpkg -i --force-confold --skip-same-version --refuse-downgrade geth_latest_arm64.deb parity_latest_arm64.deb
+sudo dpkg -i --force-confold --skip-same-version --refuse-downgrade status.im-node_latest_arm64.deb ipfs_latest_arm64.deb raiden_latest_arm64.deb
+exit 0
