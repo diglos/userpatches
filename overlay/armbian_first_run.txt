@@ -45,6 +45,10 @@ for GRP in sudo netdev audio video dialout plugdev bluetooth; do
 	adduser ethereum $GRP
 done
 
+# Force password change on first login
+chage -d 0 ethereum
+
+
 # Create some swap memory in the nvme device for avoiding memory issues
 if stat  /dev/nvme0n1 > /dev/null 2>&1;
 then

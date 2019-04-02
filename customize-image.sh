@@ -58,8 +58,8 @@ case $RELEASE in
 	cp -f /tmp/overlay/cpufrequtils /etc/default
         # Install Ethereum client packages
         echo "Installing Parity and Geth Debian packages"       
-        dpkg -i /tmp/overlay/parity_2.3.8-0_arm64.deb
 	dpkg -i /tmp/overlay/geth_1.8.23-0_arm64.deb
+	dpkg -i /tmp/overlay/parity_2.3.8-0_arm64.deb
 	dpkg -i /tmp/overlay/ipfs_0.4.18-0_arm64.deb
 	dpkg -i /tmp/overlay/status.im-node-0.23.8-0-beta8chaos_arm64.deb
 	dpkg -i /tmp/overlay/raiden_0.100.2-0_arm64.deb
