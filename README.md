@@ -42,9 +42,9 @@ These are the main EthArmbian features:
 
 # EthArmbian Images
 
-**Current Geth and Parity packages version**: 2019/04/15
+**Current Geth and Parity packages version**: 2019/04/17
 
-Parity 2.4.5 and Geth 1.8.26
+Parity 2.4.5 and Geth 1.8.27
 
 Run "update-ethereum" command to update to the latest versions.
 
