@@ -71,7 +71,6 @@ case $RELEASE in
 	dpkg -i /tmp/overlay/raiden_0.100.2-0_arm64.deb
 	# Add APT EthRaspbian repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8A584409D327B0A5
-	add-apt-repository "deb http://apt.ethraspbian.com bionic main"
-	add-apt-repository "deb http://apt.ethraspbian.com bionic-security main"
+	cp -f /tmp/overlay/ethonarm.list /etc/apt/sources.list.d
 	;;
 esac
