@@ -62,15 +62,11 @@ case $RELEASE in
 	# Configure unattended upgrades
 	cp -f /tmp/overlay/02-armbian-periodic /etc/apt/apt.conf.d/
 	cp -f /tmp/overlay/50unattended-upgrades /etc/apt/apt.conf.d/
-        # Install Ethereum packages
-        echo "Installing Parity and Geth Debian packages"       
-	dpkg -i /tmp/overlay/geth_1.8.27-0_arm64.deb
-	dpkg -i /tmp/overlay/parity_2.4.5-0_arm64.deb
-	dpkg -i /tmp/overlay/ipfs_0.4.18-0_arm64.deb
-	dpkg -i /tmp/overlay/status.im-node-0.23.8-0-beta8chaos_arm64.deb
-	dpkg -i /tmp/overlay/raiden_0.100.2-0_arm64.deb
 	# Add APT EthRaspbian repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8A584409D327B0A5
-	cp -f /tmp/overlay/ethonarm.list /etc/apt/sources.list.d
+	add-apt-repository "deb http://apt.ethraspbian.com bionic main"
+	add-apt-repository "deb http://apt.ethraspbian.com bionic-security main"
+	# Install Ethereum packages
+	apt-get update && apt-get install geth parity ipfs raiden status.im-node
 	;;
 esac

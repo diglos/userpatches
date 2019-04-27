@@ -68,6 +68,13 @@ rm -rf /root/.not_logged_in_yet
 # Page allocation error workout
 echo "vm.min_free_kbytes=16384" >> /etc/sysctl.conf
 
+# Create an alias for updating ethereum packages
+cat <<EOF >> /etc/bash.bashrc
+alias update-ethereum='
+sudo apt-get update
+sudo apt-get install geth ipfs parity raiden status.im-node'
+EOF
+
 #-----------------------------------------------------------------
 # General:
 # 1 = delete this file, after first run setup is completed.
