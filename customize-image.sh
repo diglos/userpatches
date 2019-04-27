@@ -53,8 +53,6 @@ case $RELEASE in
         cp /tmp/overlay/armbian_first_run.txt /boot
         cp -f /tmp/overlay/rc.local /etc
         cp -f /tmp/overlay/first_reboot.sh /usr/local/bin
-	# Install Ethereum update script
-	cp -f /tmp/overlay/update-ethereum /usr/local/bin
 	# Install Trinity client script
 	cp -f /tmp/overlay/install-trinity /usr/local/bin
 	# Limit cpu frequency to prevent CPU throttling
@@ -82,5 +80,11 @@ EOF
 	add-apt-repository "deb http://apt.ethraspbian.com bionic-security main"
 	# Install Ethereum packages
 	apt-get update && apt-get install geth parity ipfs raiden status.im-node
+	# Create alias for upgrading Ethereum packages
+	cat <<EOF >> /etc/bash.bashrc
+alias update-ethereum='
+sudo apt-get update
+sudo apt-get install geth ipfs parity raiden status.im-node'
+EOF
 	;;
 esac
