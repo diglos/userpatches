@@ -62,6 +62,20 @@ case $RELEASE in
 	# Configure unattended upgrades
 	cp -f /tmp/overlay/02-armbian-periodic /etc/apt/apt.conf.d/
 	cp -f /tmp/overlay/50unattended-upgrades /etc/apt/apt.conf.d/
+	# Override some systemd timer values
+	install -Dv /dev/null /etc/systemd/system/apt-daily.timer.d/override.conf
+	cat << EOF >> /etc/systemd/system/apt-daily.timer.d/override.conf
+[Timer]
+OnCalendar=00/4:00
+RandomizedDelaySec=1m
+EOF
+
+	install -Dv /dev/null /etc/systemd/system/apt-daily-upgrade.timer.d/override.conf
+	cat << EOF >> /etc/systemd/system/apt-daily-upgrade.timer.d/override.conf
+[Timer]
+OnCalendar=00/4:00
+RandomizedDelaySec=5m
+EOF
 	# Add APT EthRaspbian repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8A584409D327B0A5
 	add-apt-repository "deb http://apt.ethraspbian.com bionic main"
