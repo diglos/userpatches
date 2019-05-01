@@ -66,7 +66,7 @@ fi
 rm -rf /root/.not_logged_in_yet
 
 # Page allocation error workout
-echo "vm.min_free_kbytes=16384" >> /etc/sysctl.conf
+echo "vm.min_free_kbytes=65536" >> /etc/sysctl.conf
 
 # Create an alias for updating ethereum packages
 cat <<EOF >> /etc/bash.bashrc
