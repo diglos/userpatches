@@ -6,6 +6,7 @@
 Unattended-Upgrade::Allowed-Origins {
 	// "EthOnArm ${distro_codename}";
         // "EthOnArm ${distro_codename}-security";
+	// "EthOnArm ${distro_codename}-upgrades";
         // "${distro_id}:${distro_codename}";
 	// "${distro_id}:${distro_codename}-security";
 	// Extended Security Maintenance; doesn't necessarily exist for
