@@ -78,6 +78,7 @@ EOF
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8A584409D327B0A5
 	add-apt-repository "deb http://apt.ethraspbian.com bionic main"
 	add-apt-repository "deb http://apt.ethraspbian.com bionic-security main"
+	add-apt-repository "deb http://apt.ethraspbian.com bionic-upgrades main"
 	# Install Ethereum packages
 	apt-get update && apt-get install geth parity ipfs raiden status.im-node
 	# Create alias for upgrading Ethereum packages
