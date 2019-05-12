@@ -80,7 +80,8 @@ EOF
 	add-apt-repository "deb http://apt.ethraspbian.com bionic-security main"
 	add-apt-repository "deb http://apt.ethraspbian.com bionic-upgrades main"
 	# Install Ethereum packages
-	apt-get update && apt-get install geth parity ipfs raiden status.im-node
+	apt-get update && apt-get install geth
+	apt-get install parity ipfs raiden status.im-node
 	# Create alias for upgrading Ethereum packages
 	cat <<EOF >> /etc/bash.bashrc
 alias update-ethereum='
