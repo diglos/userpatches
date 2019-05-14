@@ -21,32 +21,8 @@ case $RELEASE in
 	# your code here
 	;;
 	stretch)
-
-	# Set of scripts to turn an ARMbian image into a full Ethereum node
-	# Visit https://www.armbian.com for further info regarding image customization and Armbian itself
-	# Diego Losada <diego.losadaf@gmail.com>
-
-	# Manage hostname, ethereum account and SSD device on first boot
-	cp /tmp/overlay/armbian_first_run.txt /boot
-	cp -f /tmp/overlay/rc.local /etc
-	cp -f /tmp/overlay/first_reboot.sh /usr/local/bin	
-	cp -f /tmp/overlay/update-ethereum /usr/local/bin
-        cp -f /tmp/overlay/install-trinity /usr/local/bin
-	cp -f /tmp/overlay/cpufrequtils /etc/default
-	# Install Ethereum client packages
-	echo "Installing Parity and Geth Debian packages"	
-	dpkg -i /tmp/overlay/geth_1.8.27-0_arm64.deb
-        dpkg -i /tmp/overlay/parity_2.4.5-0_arm64.deb
-	dpkg -i /tmp/overlay/ipfs_0.4.18-0_arm64.deb
-        dpkg -i /tmp/overlay/status.im-node-0.23.8-0-beta8chaos_arm64.deb
-	dpkg -i /tmp/overlay/raiden_0.100.2-0_arm64.deb
-
-	;;
-	trusty)
-	# your code here
 	;;
 	xenial)
-	# you can copy the above code here if you prefer Ubuntu instead of Debian
 	;;
 	bionic)
 	# Manage NVMe drive, create ethereum account and change hostname on first boot
@@ -55,8 +31,11 @@ case $RELEASE in
         cp -f /tmp/overlay/first_reboot.sh /usr/local/bin
 	# Install Trinity client script
 	cp -f /tmp/overlay/install-trinity /usr/local/bin
-	# Limit cpu frequency to prevent CPU throttling
-	cp -f /tmp/overlay/cpufrequtils /etc/default
+	# Limit cpu frequency to prevent CPU throttling (nanopc-t4 only)
+	if [ "$BOARD"="nanopct4" ];
+	then
+		cp -f /tmp/overlay/cpufrequtils /etc/default
+	fi
 	# Configure unattended upgrades
 	cp -f /tmp/overlay/02-armbian-periodic /etc/apt/apt.conf.d/
 	cp -f /tmp/overlay/50unattended-upgrades /etc/apt/apt.conf.d/
@@ -82,6 +61,11 @@ EOF
 	# Install Ethereum packages
 	apt-get update && apt-get install geth
 	apt-get install parity ipfs raiden status.im-node
+	# Install ATS script for handling fan activiy on rockpro64
+	if [ "$BOARD"="rockpro64" ];
+	then
+        	apt-get install ats-rockpro64
+	fi
 	# Create alias for upgrading Ethereum packages
 	cat <<EOF >> /etc/bash.bashrc
 alias update-ethereum='
