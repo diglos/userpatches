@@ -1,0 +1,2 @@
+APT::Periodic::Update-Package-Lists "always";
+APT::Periodic::Unattended-Upgrade "always";
