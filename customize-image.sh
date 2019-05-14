@@ -38,6 +38,7 @@ case $RELEASE in
 	fi
 	# Configure unattended upgrades
 	cp -f /tmp/overlay/02-armbian-periodic /etc/apt/apt.conf.d/
+	cp -f /tmp/overlay/20auto-upgrades /etc/apt/apt.conf.d/
 	cp -f /tmp/overlay/50unattended-upgrades /etc/apt/apt.conf.d/
 	# Override some systemd timer values
 	install -Dv /dev/null /etc/systemd/system/apt-daily.timer.d/override.conf
