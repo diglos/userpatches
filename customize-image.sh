@@ -32,7 +32,7 @@ case $RELEASE in
 	# Install Trinity client script
 	cp -f /tmp/overlay/install-trinity /usr/local/bin
 	# Limit cpu frequency to prevent CPU throttling (nanopc-t4 only)
-	if [ "$BOARD"="nanopct4" ];
+	if [ "$BOARD" == "nanopct4" ];
 	then
 		cp -f /tmp/overlay/cpufrequtils /etc/default
 	fi
@@ -63,7 +63,7 @@ EOF
 	apt-get update && apt-get install geth
 	apt-get install parity ipfs raiden status.im-node
 	# Install ATS script for handling fan activiy on rockpro64
-	if [ "$BOARD"="rockpro64" ];
+	if [ "$BOARD" == "rockpro64" ];
 	then
         	apt-get install ats-rockpro64
 	fi
