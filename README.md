@@ -18,16 +18,20 @@ Once powered on, the image takes care of all processes needed to run an Ethereum
 
 These are the main EthArmbian features:
 
-- Based on Armbian [2] Ubuntu Bionic 18.04
-- Automatically resizes the SD card
-- Partition and format the NVMe SSD drive (in case is detected) and mount it as /home for storing the Ethereum blockchain under the ethereum user account
+- Based on Armbian [2] **Ubuntu Bionic 18.04**
+- Automatically **resizes the SD card**
+- **Partitions and formats the NVMe SSD drive** (in case is detected) and mount it as /home for storing the Ethereum blockchain under the **ethereum user account**
 - Adds some swap memory (4GB) to prevent memory issues (applies only if a NVMe drive is detected)
-- Changes the hostname to something like “ethnode-e2a3e6fe” (HEX chunk based on the MAC hash)
+- **Changes the hostname to something like “ethnode-e2a3e6fe”** (HEX chunk based on the MAC hash)
 - Limits cpu frequency to prevent database corruption issues due to high temperature (Only for NanoPC-T4)
 - Automatically reboots once for hostname change and swap to take effect
-- Runs Geth [3] by default as a Systemd service in Light Server mode and starts syncing the Blockchain
-- Watches the Ethereum client binary and respawns it in case it gets killed
-- Includes Parity [4] Ethereum client as well so you can switch both clients
+- **Runs Geth [3] by default as a Systemd service** in Light Server mode and starts syncing the Blockchain
+- **Watches the Ethereum client binary** and respawns it in case it gets killed
+- **Includes Parity** [4] Ethereum client as well so you can switch both clients
+- Includes other components of the Ethereum framework such as **Status.im, Raiden, IPFS and Swarm**.
+- Includes an **APT repository** for upgrading packages
+- Includes **automatic upgrades** through "Unattended upgrades" system
+- Includes Fan control service on RockPro64 board
 
 # What you need
 
