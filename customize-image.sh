@@ -60,7 +60,7 @@ EOF
 	add-apt-repository "deb http://apt.ethraspbian.com bionic-security main"
 	add-apt-repository "deb http://apt.ethraspbian.com bionic-upgrades main"
 	# Install Ethereum packages
-	apt-get update && apt-get install geth
+	apt-get install geth
 	apt-get install parity ipfs raiden status.im-node
 	# Install ATS script for handling fan activiy on rockpro64
 	if [ "$BOARD" == "rockpro64" ];
