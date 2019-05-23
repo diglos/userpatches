@@ -2,7 +2,7 @@
 
 This is a custom configuration for creating an Ethereum full node based on the Armbian build tools. Please visit https://www.armbian.com and https://github.com/igorpecovnik/lib for further info regarding ARMBIAN.
 
-Currently (as of September 2018) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
+Currently (as of May 2019) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] and PINE RockPRO64 [5] Boards due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
 
 For more information regarding Ethereum please visit:
 
@@ -12,28 +12,32 @@ For more information regarding Ethereum please visit:
 
 # EthArmbian
 
-EthArmbian is a custom Ubuntu Linux image for the NanoPC-T4 ARM SoC that runs Geth or Parity Ethereum clients as a boot service and automatically turns the device into an full Ethereum node.
+EthArmbian is a custom Ubuntu Linux image for the NanoPC-T4 and Rockpro64 ARM SoCs that runs Geth or Parity Ethereum clients as a boot service and automatically turns the device into an full Ethereum node.
 
 Once powered on, the image takes care of all processes needed to run an Ethereum node, from setting up the environment to running the Ethereum software and synchronizing the blockchain. 
 
 These are the main EthArmbian features:
 
-- Based on Armbian [2] Ubuntu Bionic 18.04
-- Automatically resizes the SD card
-- Partition and format the NVMe SSD drive (in case is detected) and mount it as /home for storing the Ethereum blockchain under the ethereum user account
+- Based on Armbian [2] **Ubuntu Bionic 18.04**
+- Automatically **resizes the SD card**
+- **Partitions and formats the NVMe SSD drive** (in case is detected) and mount it as /home for storing the Ethereum blockchain under the **ethereum user account**
 - Adds some swap memory (4GB) to prevent memory issues (applies only if a NVMe drive is detected)
-- Changes the hostname to something like “ethnode-e2a3e6fe” (HEX chunk based on the MAC hash)
-- Limits cpu frequency to prevent database corruption issues due to high temperature (this can be solved by installing a fan as well)
+- **Changes the hostname to something like “ethnode-e2a3e6fe”** (HEX chunk based on the MAC hash)
+- Limits cpu frequency to prevent database corruption issues due to high temperature (Only for NanoPC-T4)
 - Automatically reboots once for hostname change and swap to take effect
-- Runs Geth [3] by default as a Systemd service in Light Server mode and starts syncing the Blockchain
-- Watches the Ethereum client binary and respawns it in case it gets killed
-- Includes Parity [4] Ethereum client as well so you can switch both clients
+- **Runs Geth [3] by default as a Systemd service** in Light Server mode and starts syncing the Blockchain
+- **Watches the Ethereum client binary** and respawns it in case it gets killed
+- **Includes Parity** [4] Ethereum client as well so you can switch both clients
+- Includes other components of the Ethereum framework such as **Status.im, Raiden, IPFS and Swarm**.
+- Includes an **APT repository** for upgrading packages
+- Includes **automatic upgrades** through "Unattended upgrades" system
+- Includes Fan control service on RockPro64 board
 
 # What you need
 
-1. Friendly Elec NanoPC-T4 ARM SoC [1]
+1. A **Friendly Elec NanoPC-T4 ARM SoC** [1] or a **RockPro64 ARM SoC** [5]
 2. Micro SD Card and SD Adaptor (for flashing the MicroSD)
-3. NVMe M.2 SSD (minimum 256GB). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance of syncing the blockchain.**
+3. NVMe M.2 SSD (minimum 256GB, 500GB recommended). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance of syncing the blockchain.**
 4. An ethernet cable
 5. EthArmbian image, download link below (see build instructions if you don't own a NanoPC-T4)
 6. (Optional) 30303 Port forwarding. This is a recommended setting (see below)
@@ -46,16 +50,15 @@ These are the main EthArmbian features:
 
 Parity 2.4.5 and Geth 1.8.27
 
-Run "update-ethereum" command to update to the latest versions.
+Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
 **Current image release date**: 2019/02/23
 
 Parity 2.2.11 and Geth 1.8.23. These images are ready for Constantinople and Petersburg Hardforks.
 
-There are 2 images available for the Nanopc-T4 ARM Soc, one with Geth as default client and the other with Parity.
+There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 (2019 June) with Geth as default client:
 
 https://ethraspbian.com/downloads/Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-geth.img.zip
-https://ethraspbian.com/downloads/Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-parity.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -251,6 +254,10 @@ sudo journalctl -u geth -f
 - [2] https://www.armbian.com
 - [3] https://github.com/ethereum/go-ethereum
 - [4] https://github.com/paritytech/parity-ethereum
+- [5] https://store.pine64.org/?product=rockpro64-4gb-single-board-computer
+Components
+https://store.pine64.org/?product=rockpro64-pci-e-x4-to-m-2ngff-nvme-ssd-interface-card
+https://store.pine64.org/?product=rockpro64-10mm-low-profile-heatsink-with-fan
 
 # Armbian image build instructions (for other devices)
 
