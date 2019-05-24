@@ -57,8 +57,8 @@ EOF
 	# Add APT EthRaspbian repository
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8A584409D327B0A5
 	add-apt-repository "deb http://apt.ethraspbian.com bionic main"
-	add-apt-repository "deb http://apt.ethraspbian.com bionic-security main"
-	add-apt-repository "deb http://apt.ethraspbian.com bionic-upgrades main"
+	add-apt-repository -n "deb http://apt.ethraspbian.com bionic-security main"
+	add-apt-repository -n "deb http://apt.ethraspbian.com bionic-upgrades main"
 	# Install Ethereum packages
 	apt-get install geth
 	apt-get install parity ipfs raiden status.im-node
