@@ -62,10 +62,11 @@ EOF
 	# Install Ethereum packages
 	apt-get install geth
 	apt-get install parity ipfs raiden status.im-node
-	# Install ATS script for handling fan activiy on rockpro64
+	# Install ATS script for handling fan activiy and disable ZRAM on rockpro64
 	if [ "$BOARD" == "rockpro64" ];
 	then
         	apt-get install ats-rockpro64
+		systemctl disable armbian-zram-config
 	fi
 	# Create alias for upgrading Ethereum packages
 	cat <<EOF >> /etc/bash.bashrc
