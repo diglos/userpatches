@@ -62,7 +62,7 @@ EOF
 	# Install Ethereum packages
 	apt-get install geth
 	apt-get install parity ipfs raiden status.im-node
-	# Install ATS script for handling fan activiy and disable ZRAM on rockpro64
+	# Install ATS script for handling fan activiy and disable ZRAM on rockpro64 to avoid RAM issues
 	if [ "$BOARD" == "rockpro64" ];
 	then
         	apt-get install ats-rockpro64
