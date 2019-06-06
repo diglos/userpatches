@@ -61,7 +61,7 @@ EOF
 	add-apt-repository "deb http://apt.ethraspbian.com bionic-upgrades main"
 	# Install Ethereum packages
 	apt-get install geth
-	apt-get install parity ipfs raiden status.im-node
+	apt-get install parity ipfs raiden status.im-node vipnode prysm-beacon prysm-validator
 	# Install ATS script for handling fan activiy and disable ZRAM on rockpro64 to avoid RAM issues
 	if [ "$BOARD" == "rockpro64" ];
 	then
@@ -72,7 +72,7 @@ EOF
 	cat <<EOF >> /etc/bash.bashrc
 alias update-ethereum='
 sudo apt-get update
-sudo apt-get install geth ipfs parity raiden status.im-node'
+sudo apt-get install geth ipfs parity raiden status.im-node vipnode prysm-beacon prysm-validator'
 EOF
 	;;
 esac
