@@ -17,7 +17,7 @@ if [ ! -f $FLAG ]; then
    touch $FLAG
    #Reboot once for hostname change and swap to take effect
    #while [ -f /tmp/first_run_lock ]; do sleep 5; done
-   sleep 10
+   sleep 20
    /usr/local/bin/first_reboot.sh
    
 else
