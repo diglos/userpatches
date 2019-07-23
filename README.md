@@ -36,7 +36,7 @@ These are the main EthArmbian features:
 # Software installed
 
 ## Ethereum clients
-- Geth 1.9 (runs by default in light mode)
+- Geth 1.9
 - Parity 2.5.5
 
 ## Ethereum framework
