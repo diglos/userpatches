@@ -2,7 +2,7 @@
 
 This is a custom configuration for creating an Ethereum full node based on the Armbian build tools. Please visit https://www.armbian.com and https://github.com/igorpecovnik/lib for further info regarding ARMBIAN.
 
-Currently (as of May 2019) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] and PINE RockPRO64 [5] Boards due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
+Currently (as of July 2019) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] and PINE RockPRO64 [5] boards due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
 
 For more information regarding Ethereum please visit:
 
@@ -12,9 +12,9 @@ For more information regarding Ethereum please visit:
 
 # EthArmbian
 
-EthArmbian is a custom Ubuntu Linux image for the NanoPC-T4 and Rockpro64 ARM SoCs that runs Geth or Parity Ethereum clients as a boot service and automatically turns the device into an full Ethereum node.
+EthArmbian (ARM64) [1] is a custom Ubuntu Linux image for the **NanoPC-T4 ARM SoC** [2]  and the **RockPro64 ARM SoC** [3] that runs Geth or Parity Ethereum clients as a boot service and **automatically turns the device into a full Ethereum node**. It includes other components of the Ethereum ecosystem such as **Trinity, Status.im, Raiden, IPFS, Swarm and Vipnode as well as initial support for Eth2.0 clients**.
 
-Once powered on, the image takes care of all processes needed to run an Ethereum node, from setting up the environment to running the Ethereum software and synchronizing the blockchain. 
+Images take care of all process, from setting up the environment to running the Ethereum software and synchronizing the blockchain. All you need is to flash the MicroSD card with the image, plug an ethernet cable and power on the device.
 
 These are the main EthArmbian features:
 
@@ -46,19 +46,20 @@ These are the main EthArmbian features:
 
 # EthArmbian Images
 
-**Current Geth and Parity packages version**: 2019/04/17
+**Current Geth and Parity packages version**: 2019/07/22
 
-Parity 2.4.5 and Geth 1.8.27
+Parity 2.5.5 and Geth 1.9
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
-**Current image release date**: 2019/02/23
+**Current image release date**: 2019/07/22
 
-Parity 2.2.11 and Geth 1.8.23. These images are ready for Constantinople and Petersburg Hardforks.
+Parity 2.5.5 and Geth 1.9.
 
-There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 (2019 June) with Geth as default client:
+There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 (2019 July) with Parity as default client:
 
-https://ethraspbian.com/downloads/Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-geth.img.zip
+https://ethraspbian.com/downloads/Armbian_5.91_Nanopct4_Ubuntu_bionic_default_4.4.179.img.zip
+https://ethraspbian.com/downloads/Armbian_5.91_Rockpro64_Ubuntu_bionic_default_4.4.184.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -67,7 +68,7 @@ For other compatible devices please check below instructions for building the im
 ## In a nutshell
 
 1. Flash the Armbian Image on your MicroSD Card (in your desktop or laptop computer, see below for detailed instructions)
-2. Get the NanoPC-T4
+2. Get the NanoPC-T4 or the RockPro64
 3. Plug in the MicroSD card
 4. Plug in the NVMe M.2 SSD drive
 5. Plug in the Ethernet cable
@@ -100,8 +101,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 Installing Geth image:
 
 ```
-unzip Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-geth.img.zip
-sudo dd bs=1M if=Armbian_5.76_Nanopct4_Ubuntu_bionic_default_4.4.176-geth.img of=/dev/mmcblk0 && sync
+unzip Armbian_5.91_Nanopct4_Ubuntu_bionic_default_4.4.179.img.zip
+sudo dd bs=1M if=Armbian_5.91_Nanopct4_Ubuntu_bionic_default_4.4.179.img of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
@@ -184,7 +185,7 @@ For Parity client, just a few hours (4-5). Geth takes 2 and a half days. (as of 
 
 ## Which is the blockchain size once synced?
 
-For Parity, 33 GB. For Geth, about 127GB. (as of September 2018)
+For Parity, 180 GB. For Geth, about 160GB. (as of July 2019). Please note that there is currently an issue with Geth 1.9
 
 ## I'm seeing lots of "Database compacting, degraded performance" messages (geth)
 
@@ -247,6 +248,8 @@ You can also monitor a tail of the log of any service running in the background 
 ```bash
 sudo journalctl -u geth -f
 ```
+## Can I buy a board with the image preinstalled?
+Yes, see the links section. This is ran by Bruno Skvorc and the store is non-profit 
 
 ## Links
 
@@ -258,6 +261,9 @@ sudo journalctl -u geth -f
 Components
 https://store.pine64.org/?product=rockpro64-pci-e-x4-to-m-2ngff-nvme-ssd-interface-card
 https://store.pine64.org/?product=rockpro64-10mm-low-profile-heatsink-with-fan
+
+Get the NanoPC-T4 with all components assembled and the EthArmbian image preinstalled
+https://blockandmortar.io
 
 # Armbian image build instructions (for other devices)
 
