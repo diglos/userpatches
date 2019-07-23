@@ -33,6 +33,20 @@ These are the main EthArmbian features:
 - Includes **automatic upgrades** through "Unattended upgrades" system
 - Includes Fan control service on RockPro64 board
 
+# Software installed
+
+## Ethereum clients
+- Geth 1.9 (runs by default in light mode)
+- Parity 2.5.5
+
+## Ethereum framework
+-  Swarm: 0.4.2
+ - Raiden Network: 0.100.4
+ - IPFS: 0.4.21
+ - Status.im: 0.30.0~beta2
+ - Vipnode: 2.1
+ - Prysm Eth2.0 clients: 0.2.1
+
 # What you need
 
 1. A **Friendly Elec NanoPC-T4 ARM SoC** [1] or a **RockPro64 ARM SoC** [5]
