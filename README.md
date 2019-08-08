@@ -4,6 +4,10 @@ This is a custom configuration for creating an Ethereum full node based on the A
 
 Currently (as of July 2019) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] and PINE RockPRO64 [5] boards due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
 
+If you are looking for an image for the Raspberry Pi 2/3/4, please visit:
+
+https://github.com/diglos/pi-gen
+
 For more information regarding Ethereum please visit:
 
 - https://ethereum.org/
