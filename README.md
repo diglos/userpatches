@@ -40,13 +40,13 @@ These are the main EthArmbian features:
 # Software installed
 
 ## Ethereum clients
-- Geth 1.9.1
-- Parity 2.5.5
+- Geth 1.9.4
+- Parity 2.5.7
 
 ## Ethereum framework
 -  Swarm: 0.4.3
  - Raiden Network: 0.100.4
- - IPFS: 0.4.21
+ - IPFS: 0.4.22
  - Status.im: 0.30.0~beta2
  - Vipnode: 2.2.1
  - Prysm Eth2.0 clients: 0.2.1
