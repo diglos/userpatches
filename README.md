@@ -40,8 +40,8 @@ These are the main EthArmbian features:
 # Software installed
 
 ## Ethereum clients
-- Geth 1.9.4
-- Parity 2.5.7
+- Geth 1.9.5
+- Parity 2.5.9
 
 ## Ethereum framework
 -  Swarm: 0.4.3
