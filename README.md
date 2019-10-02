@@ -37,14 +37,14 @@ These are the main EthArmbian features:
 - Includes **automatic upgrades** through "Unattended upgrades" system
 - Includes Fan control service on RockPro64 board
 
-# Software installed
+# Software installed (run sudo update-ethereum)
 
 ## Ethereum clients
 - Geth 1.9.5
 - Parity 2.5.9
 
 ## Ethereum framework
--  Swarm: 0.4.3
+-  Swarm: 0.5.0
  - Raiden Network: 0.100.4
  - IPFS: 0.4.22
  - Status.im: 0.30.0~beta2
