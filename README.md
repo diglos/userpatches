@@ -40,7 +40,7 @@ These are the main EthArmbian features:
 # Software installed (run sudo update-ethereum)
 
 ## Ethereum clients
-- Geth 1.9.5
+- Geth 1.9.6
 - Parity 2.5.9
 
 ## Ethereum framework
@@ -64,17 +64,17 @@ These are the main EthArmbian features:
 
 # EthArmbian Images
 
-**Current Geth and Parity packages version**: 2019/10/01
+**Current Geth and Parity packages version**: 2019/10/07
 
-Parity 2.5.9 and Geth 1.9.5
+Parity 2.5.9 and Geth 1.9.6
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
 **Current image release date**: 2019/10/07
 
-Parity 2.5.59 and Geth 1.9.6
+Parity 2.5.9 and Geth 1.9.6
 
-There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 (2019 July) with Parity as default client:
+There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 with Geth as default client:
 
 https://ethraspbian.com/downloads/Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
 https://ethraspbian.com/downloads/Armbian_5.98_Rockpro64_Ubuntu_bionic_default_4.4.192.img.zip
