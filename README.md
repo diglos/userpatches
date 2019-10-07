@@ -70,14 +70,14 @@ Parity 2.5.9 and Geth 1.9.5
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
-**Current image release date**: 2019/07/22
+**Current image release date**: 2019/10/07
 
-Parity 2.5.5 and Geth 1.9.
+Parity 2.5.59 and Geth 1.9.6
 
 There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 (2019 July) with Parity as default client:
 
-https://ethraspbian.com/downloads/Armbian_5.91_Nanopct4_Ubuntu_bionic_default_4.4.179.img.zip
-https://ethraspbian.com/downloads/Armbian_5.91_Rockpro64_Ubuntu_bionic_default_4.4.184.img.zip
+https://ethraspbian.com/downloads/Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
+https://ethraspbian.com/downloads/Armbian_5.98_Rockpro64_Ubuntu_bionic_default_4.4.192.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -119,8 +119,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 Installing Geth image:
 
 ```
-unzip Armbian_5.91_Nanopct4_Ubuntu_bionic_default_4.4.179.img.zip
-sudo dd bs=1M if=Armbian_5.91_Nanopct4_Ubuntu_bionic_default_4.4.179.img of=/dev/mmcblk0 && sync
+unzip AArmbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
+sudo dd bs=1M if=Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
