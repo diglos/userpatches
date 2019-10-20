@@ -44,11 +44,11 @@ These are the main EthArmbian features:
 - Parity 2.5.9
 
 ## Ethereum framework
--  Swarm: 0.5.0
- - Raiden Network: 0.100.4
+-  Swarm: 0.5.2
+ - Raiden Network: 0.200.0~rc1
  - IPFS: 0.4.22
- - Status.im: 0.30.0~beta2
- - Vipnode: 2.2.1
+ - Status.im: 0.34.0~beta3
+ - Vipnode: 2.3
  - Prysm Eth2.0 clients: 0.2.1
 
 # What you need
