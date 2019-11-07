@@ -40,7 +40,7 @@ These are the main EthArmbian features:
 # Software installed (run sudo update-ethereum)
 
 ## Ethereum clients
-- Geth 1.9.6
+- Geth 1.9.7
 - Parity 2.5.9
 
 ## Ethereum framework
