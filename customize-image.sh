@@ -32,10 +32,10 @@ case $RELEASE in
 	# Install Trinity client script
 	cp -f /tmp/overlay/install-trinity /usr/local/bin
 	# Limit cpu frequency to prevent CPU throttling (nanopc-t4 only)
-	if [ "$BOARD" == "nanopct4" ];
-	then
-		cp -f /tmp/overlay/cpufrequtils /etc/default
-	fi
+	#if [ "$BOARD" == "nanopct4" ];
+	#then
+	#	cp -f /tmp/overlay/cpufrequtils /etc/default
+	#fi
 	# Configure unattended upgrades
 	cp -f /tmp/overlay/02-armbian-periodic /etc/apt/apt.conf.d/
 	cp -f /tmp/overlay/20auto-upgrades /etc/apt/apt.conf.d/
@@ -67,6 +67,10 @@ EOF
 	then
         	apt-get install ats-rockpro64
 		systemctl disable armbian-zram-config
+	fi
+	if [ "$BOARD" == "nanopct4" ];
+	then
+		apt-get install nanopct4-fan-pwm
 	fi
 	# Create alias for upgrading Ethereum packages
 	cat <<EOF >> /etc/bash.bashrc
