@@ -39,7 +39,7 @@ These are the main EthArmbian features:
 
 # Software installed
 
-Run the following command to update to las versions available
+Run the following command to update to last versions available
 
 `sudo update-ethereum`
 
