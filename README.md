@@ -37,7 +37,11 @@ These are the main EthArmbian features:
 - Includes **automatic upgrades** through "Unattended upgrades" system
 - Includes Fan control service on RockPro64 board
 
-# Software installed (run 'sudo update-ethereum' command to update to last versions)
+# Software installed
+
+Run the following command to update to las versions available
+
+`sudo update-ethereum`
 
 ## Ethereum clients
 - Geth 1.9.9
@@ -64,9 +68,9 @@ These are the main EthArmbian features:
 
 # EthArmbian Images
 
-**Current Geth and Parity packages version**: 2019/10/07
+**Current Geth and Parity packages version**: 2019/12/08
 
-Parity 2.5.9 and Geth 1.9.6
+Parity 2.5.11 and Geth 1.9.9
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
