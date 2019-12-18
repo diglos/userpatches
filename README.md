@@ -1,26 +1,8 @@
-# Disclaimer
+Ethereum on ARM64 [2] is a custom Ubuntu Linux image for the NanoPC-T4 ARM SoC [3] and the RockPro64 ARM SoC [4] that runs Geth or Parity Ethereum clients as a boot service and automatically turns the device into a full Ethereum node. It includes other components of the Ethereum ecosystem such as Trinity, Status.im, Raiden, IPFS, Swarm and Vipnode as well as initial support for Eth2.0 clients.
 
-This is a custom configuration for creating an Ethereum full node based on the Armbian build tools. Please visit https://www.armbian.com and https://github.com/igorpecovnik/lib for further info regarding ARMBIAN.
+Images take care of all necessary steps, from setting up the environment to running the Ethereum software and synchronizing the blockchain. All you need is to flash the MicroSD card with the image, plug an ethernet cable and power on the device.
 
-Currently (as of July 2019) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] and PINE RockPRO64 [5] boards due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
-
-If you are looking for an image for the Raspberry Pi 2/3/4, please visit:
-
-https://github.com/diglos/pi-gen
-
-For more information regarding Ethereum please visit:
-
-- https://ethereum.org/
-- https://www.reddit.com/r/ethereum/
-
-
-# EthArmbian
-
-EthArmbian (ARM64) [1] is a custom Ubuntu Linux image for the **NanoPC-T4 ARM SoC** [2]  and the **RockPro64 ARM SoC** [3] that runs Geth or Parity Ethereum clients as a boot service and **automatically turns the device into a full Ethereum node**. It includes other components of the Ethereum ecosystem such as **Trinity, Status.im, Raiden, IPFS, Swarm and Vipnode as well as initial support for Eth2.0 clients**.
-
-Images take care of all process, from setting up the environment to running the Ethereum software and synchronizing the blockchain. All you need is to flash the MicroSD card with the image, plug an ethernet cable and power on the device.
-
-These are the main EthArmbian features:
+These are the main Ethereum on ARM64 features:
 
 - Based on Armbian [2] **Ubuntu Bionic 18.04**
 - Automatically **resizes the SD card**
@@ -66,7 +48,7 @@ Run the following command to update to last versions available
 7. (Optional) USB keyboard, Monitor and HDMI cable
 
 
-# EthArmbian Images
+# Ethereum on ARM64 Images
 
 **Current Geth and Parity packages version**: 2019/12/08
 
@@ -100,7 +82,7 @@ You are all set. Take into account that the installer needs to perform some oper
 
 For a full Ethereum node to be online the whole blockchain needs to be synced (to the very last block) so it will take some time to get there (see the FAQ section).
 
-## Flashing the EthArmbian image
+## Flashing the Ethereum on ARM64 image
 
 ### MicroSD Install instructions for Linux
 
