@@ -64,7 +64,10 @@ Parity 2.5.12 and Geth 1.9.9
 There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 with Geth as default client:
 
 https://ethraspbian.com/downloads/Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
+SHA256 8c16d7e19e54439cad90c842b67f862735463ea6ed34a6a716b00f1b74f2a6f0
+
 https://ethraspbian.com/downloads/Armbian_5.98_Rockpro64_Ubuntu_bionic_default_4.4.192.img.zip
+SHA256 8cea0ae20cd92cf9ec81a11086c45f632dde249e835da3eca4c1becf0685550b
 
 For other compatible devices please check below instructions for building the image by yourself.
 
