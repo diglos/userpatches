@@ -27,7 +27,7 @@ Run the following command to update to last versions available
 
 ## Ethereum clients
 - Geth 1.9.9
-- Parity 2.5.12
+- Parity 2.5.13
 
 ## Ethereum framework
 -  Swarm: 0.5.4
