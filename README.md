@@ -51,9 +51,9 @@ Run the following command to update to last versions available
 
 # Ethereum on ARM64 Images
 
-**Current Geth and Parity packages version**: 2019/12/20
+**Current Geth and Parity packages version**: 2020/01/01
 
-Parity 2.5.12 and Geth 1.9.9
+Parity 2.5.13 and Geth 1.9.9
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
