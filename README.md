@@ -1,37 +1,19 @@
-# Disclaimer
+Ethereum on ARM64 is a custom Ubuntu Linux image for the NanoPC-T4 ARM SoC [1] and the RockPro64 ARM SoC [2] that runs Geth or Parity Ethereum clients as a boot service and automatically turns the device into a full Ethereum node. It includes other components of the Ethereum ecosystem such as Trinity, Status.im, Raiden, IPFS, Swarm and Vipnode as well as initial support for Eth2.0 clients.
 
-This is a custom configuration for creating an Ethereum full node based on the Armbian build tools. Please visit https://www.armbian.com and https://github.com/igorpecovnik/lib for further info regarding ARMBIAN.
+Images take care of all necessary steps, from setting up the environment to running the Ethereum software and synchronizing the blockchain. All you need is to flash the MicroSD card with the image, plug an ethernet cable and power on the device.
 
-Currently (as of July 2019) these scripts are developed to build an Armbian image for the FriendlyElec NanoPC-T4 [1] and PINE RockPRO64 [5] boards due to the high hardware specs needed to sync the Ethereum Blockchain. A NVMe M.2 SSD drive is needed as well.
+These are the main Ethereum on ARM64 features:
 
-If you are looking for an image for the Raspberry Pi 2/3/4, please visit:
-
-https://github.com/diglos/pi-gen
-
-For more information regarding Ethereum please visit:
-
-- https://ethereum.org/
-- https://www.reddit.com/r/ethereum/
-
-
-# EthArmbian
-
-EthArmbian (ARM64) [1] is a custom Ubuntu Linux image for the **NanoPC-T4 ARM SoC** [2]  and the **RockPro64 ARM SoC** [3] that runs Geth or Parity Ethereum clients as a boot service and **automatically turns the device into a full Ethereum node**. It includes other components of the Ethereum ecosystem such as **Trinity, Status.im, Raiden, IPFS, Swarm and Vipnode as well as initial support for Eth2.0 clients**.
-
-Images take care of all process, from setting up the environment to running the Ethereum software and synchronizing the blockchain. All you need is to flash the MicroSD card with the image, plug an ethernet cable and power on the device.
-
-These are the main EthArmbian features:
-
-- Based on Armbian [2] **Ubuntu Bionic 18.04**
+- Based on Armbian **Ubuntu Bionic 18.04**
 - Automatically **resizes the SD card**
 - **Partitions and formats the NVMe SSD drive** (in case is detected) and mount it as /home for storing the Ethereum blockchain under the **ethereum user account**
 - Adds some swap memory (4GB) to prevent memory issues (applies only if a NVMe drive is detected)
 - **Changes the hostname to something like “ethnode-e2a3e6fe”** (HEX chunk based on the MAC hash)
 - Limits cpu frequency to prevent database corruption issues due to high temperature (Only for NanoPC-T4)
 - Automatically reboots once for hostname change and swap to take effect
-- **Runs Geth [3] by default as a Systemd service** in Light Server mode and starts syncing the Blockchain
+- **Runs Geth by default as a Systemd service** in Light Server mode and starts syncing the Blockchain
 - **Watches the Ethereum client binary** and respawns it in case it gets killed
-- **Includes Parity** [4] Ethereum client as well so you can switch both clients
+- **Includes Parity** Ethereum client as well so you can switch both clients
 - Includes other components of the Ethereum framework such as **Status.im, Raiden, IPFS and Swarm**.
 - Includes an **APT repository** for upgrading packages
 - Includes **automatic upgrades** through "Unattended upgrades" system
@@ -45,19 +27,20 @@ Run the following command to update to last versions available
 
 ## Ethereum clients
 - Geth 1.9.9
-- Parity 2.5.11
+- Parity 2.5.13
 
 ## Ethereum framework
--  Swarm: 0.5.2
+-  Swarm: 0.5.4
  - Raiden Network: 0.200.0~rc1
  - IPFS: 0.4.22
  - Status.im: 0.34.0~beta3
  - Vipnode: 2.3
- - Prysm Eth2.0 clients: 0.2.1
+ - Prysm Eth2.0 client: 0.2.7
+ - Lighthouse Eth2.0 client: 0.1.0
 
 # What you need
 
-1. A **Friendly Elec NanoPC-T4 ARM SoC** [1] or a **RockPro64 ARM SoC** [5]
+1. A **Friendly Elec NanoPC-T4 ARM SoC** [1] or a **RockPro64 ARM SoC** [2]
 2. Micro SD Card and SD Adaptor (for flashing the MicroSD)
 3. NVMe M.2 SSD (minimum 256GB, 500GB recommended). **Keep in mind that without a NVMe M.2 SSD drive there’s absolutely no chance of syncing the blockchain.**
 4. An ethernet cable
@@ -66,22 +49,25 @@ Run the following command to update to last versions available
 7. (Optional) USB keyboard, Monitor and HDMI cable
 
 
-# EthArmbian Images
+# Ethereum on ARM64 Images
 
-**Current Geth and Parity packages version**: 2019/12/08
+**Current Geth and Parity packages version**: 2020/01/01
 
-Parity 2.5.11 and Geth 1.9.9
+Parity 2.5.13 and Geth 1.9.9
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
-**Current image release date**: 2019/10/07
+**Current image release date**: 2019/12/20
 
-Parity 2.5.9 and Geth 1.9.6
+Parity 2.5.12 and Geth 1.9.9
 
 There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 with Geth as default client:
 
 https://ethraspbian.com/downloads/Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
+SHA256 8c16d7e19e54439cad90c842b67f862735463ea6ed34a6a716b00f1b74f2a6f0
+
 https://ethraspbian.com/downloads/Armbian_5.98_Rockpro64_Ubuntu_bionic_default_4.4.192.img.zip
+SHA256 8cea0ae20cd92cf9ec81a11086c45f632dde249e835da3eca4c1becf0685550b
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -100,7 +86,7 @@ You are all set. Take into account that the installer needs to perform some oper
 
 For a full Ethereum node to be online the whole blockchain needs to be synced (to the very last block) so it will take some time to get there (see the FAQ section).
 
-## Flashing the EthArmbian image
+## Flashing the Ethereum on ARM64 image
 
 ### MicroSD Install instructions for Linux
 
@@ -123,7 +109,7 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 Installing Geth image:
 
 ```
-unzip AArmbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
+unzip Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
 sudo dd bs=1M if=Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img of=/dev/mmcblk0 && sync
 ```
 
@@ -276,16 +262,7 @@ Yes, see the links section. This is ran by Bruno Skvorc and the store is non-pro
 ## Links
 
 - [1] https://www.friendlyarm.com/index.php?route=product/product&product_id=225
-- [2] https://www.armbian.com
-- [3] https://github.com/ethereum/go-ethereum
-- [4] https://github.com/paritytech/parity-ethereum
-- [5] https://store.pine64.org/?product=rockpro64-4gb-single-board-computer
-Components
-https://store.pine64.org/?product=rockpro64-pci-e-x4-to-m-2ngff-nvme-ssd-interface-card
-https://store.pine64.org/?product=rockpro64-10mm-low-profile-heatsink-with-fan
-
-Get the NanoPC-T4 with all components assembled and the EthArmbian image preinstalled
-https://blockandmortar.io
+- [2] https://store.pine64.org/?product=rockpro64-4gb-single-board-computer
 
 # Armbian image build instructions (for other devices)
 
