@@ -19,24 +19,31 @@ These are the main Ethereum on ARM64 features:
 - Includes **automatic upgrades** through "Unattended upgrades" system
 - Includes Fan control service on RockPro64 board
 
-# Software installed
+# Software installed (image)
 
 Run the following command to update to last versions available
 
 `sudo update-ethereum`
 
-## Ethereum clients
-- Geth 1.9.9
-- Parity 2.5.13
+## Ethereum 1.0 clients
+
+- Geth: 1.9.12 (official binary)
+- Parity: 2.7.2 (cross compiled)
+- Nethermind: 1.7.4 (cross compiled)
+- Hyperledger Besu: 1.4.2 (compiled. ARM64 only)
+
+## Ethereum 2.0 clients
+
+- Prysm: 0.3.4 (official binary. ARM64 only)
+- Lighthouse: 0.1.1 (compiled. ARM64 only)
 
 ## Ethereum framework
--  Swarm: 0.5.4
- - Raiden Network: 0.200.0~rc1
- - IPFS: 0.4.22
- - Status.im: 0.34.0~beta3
- - Vipnode: 2.3
- - Prysm Eth2.0 client: 0.2.7
- - Lighthouse Eth2.0 client: 0.1.0
+
+- Swarm: 0.5.7 (official binary)
+- Raiden Network: 0.200.0~rc1 (official binary)
+- IPFS: 0.4.23 (official binary)
+- Status.im: 0.34.0~beta3 (cross compiled)
+- Vipnode: 2.3.3 (official binary)
 
 # What you need
 
@@ -51,23 +58,28 @@ Run the following command to update to last versions available
 
 # Ethereum on ARM64 Images
 
-**Current Geth and Parity packages version**: 2020/01/01
+**Current Geth and Parity packages version**: 2020/04/10
 
-Parity 2.5.13 and Geth 1.9.9
+- Geth: 1.9.12 (official binary)
+- Parity: 2.7.2 (cross compiled)
+- Nethermind: 1.7.17 (cross compiled)
+- Hyperledger Besu: 1.4.3 (compiled. ARM64 only)
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
-**Current image release date**: 2019/12/20
-
-Parity 2.5.12 and Geth 1.9.9
+**Current image release date**: 2020/03/23
 
 There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 with Geth as default client:
 
-https://ethraspbian.com/downloads/Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
-SHA256 8c16d7e19e54439cad90c842b67f862735463ea6ed34a6a716b00f1b74f2a6f0
+NANOPC-T4 IMAGE
 
-https://ethraspbian.com/downloads/Armbian_5.98_Rockpro64_Ubuntu_bionic_default_4.4.192.img.zip
-SHA256 8cea0ae20cd92cf9ec81a11086c45f632dde249e835da3eca4c1becf0685550b
+https://ethraspbian.com/downloads/Armbian_20.05.0-trunk_Nanopct4_bionic_legacy_4.4.213.img.zip
+
+SHA256 e67fdc743b33a4b397a55d721fcd35fc3541a8f26bd006d2461c035c2e46fe97
+
+ROCKPRO64 IMAGE
+
+https://ethraspbian.com/downloads/Armbian_20.05.0-trunk_Rockpro64_bionic_legacy_4.4.213.img.zip
 
 For other compatible devices please check below instructions for building the image by yourself.
 
@@ -106,11 +118,11 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 
 2. Flash the MicroSD:
 
-Installing Geth image:
+Installing image:
 
 ```
-unzip Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img.zip
-sudo dd bs=1M if=Armbian_5.98_Nanopct4_Ubuntu_bionic_default_4.4.192.img of=/dev/mmcblk0 && sync
+unzip Armbian_20.05.0-trunk_Nanopct4_bionic_legacy_4.4.213.img.zip
+sudo dd bs=1M if=Armbian_20.05.0-trunk_Nanopct4_bionic_legacy_4.4.213.img of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
