@@ -4,7 +4,7 @@ Images take care of all necessary steps, from setting up the environment to runn
 
 These are the main Ethereum on ARM64 features:
 
-- Based on Armbian **Ubuntu Bionic 18.04**
+- Based on Armbian **Ubuntu Focal 20.04**
 - Automatically **resizes the SD card**
 - **Partitions and formats the NVMe SSD drive** (in case is detected) and mount it as /home for storing the Ethereum blockchain under the **ethereum user account**
 - Adds some swap memory (4GB) to prevent memory issues (applies only if a NVMe drive is detected)
@@ -28,13 +28,16 @@ Run the following command to update to last versions available
 ## Ethereum 1.0 clients
 
 - Geth: 1.9.23 (official binary)
-- Nethermind: 1.7.4 (cross compiled)
-- Hyperledger Besu: 1.4.2 (compiled. ARM64 only)
+- Nethermind: 1.8.105 (cross compiled)
+- Hyperledger Besu: 1.5.4 (compiled. ARM64 only)
 
 ## Ethereum 2.0 clients
 
-- Prysm: 0.3.4 (official binary. ARM64 only)
-- Lighthouse: 0.1.1 (compiled. ARM64 only)
+- Prysm: 1.0.0-beta0 (official binary. ARM64 only)
+- Lighthouse: 0.3.1beta0 (official binary. ARM64 only)
+- Nimbus: 0.5.0alpha+20200914-0 (cross compiled)
+- Teku: 0.12.4alpha+20200821-2 (cross compiled)
+- Eth2.0-deposit-cli:0.4.1
 
 # What you need
 
@@ -49,12 +52,19 @@ Run the following command to update to last versions available
 
 # Ethereum on ARM64 Images
 
-**Current Geth and Parity packages version**: 2020/04/10
+**Current packages version**: 2020/10/24
 
-- Geth: 1.9.12 (official binary)
-- Parity: 2.7.2 (cross compiled)
-- Nethermind: 1.7.17 (cross compiled)
-- Hyperledger Besu: 1.4.3 (compiled. ARM64 only)
+- Geth: 1.9.23 (official binary)
+- Nethermind: 1.8.105 (cross compiled)
+- Hyperledger Besu: 1.5.4 (compiled. ARM64 only)
+
+## Ethereum 2.0 clients
+
+- Prysm: 1.0.0-beta0 (official binary. ARM64 only)
+- Lighthouse: 0.3.1beta0 (official binary. ARM64 only)
+- Nimbus: 0.5.0alpha+20200914-0 (cross compiled)
+- Teku: 0.12.4alpha+20200821-2 (cross compiled)
+- Eth2.0-deposit-cli:0.4.1
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
