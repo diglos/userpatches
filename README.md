@@ -27,8 +27,7 @@ Run the following command to update to last versions available
 
 ## Ethereum 1.0 clients
 
-- Geth: 1.9.12 (official binary)
-- Parity: 2.7.2 (cross compiled)
+- Geth: 1.9.23 (official binary)
 - Nethermind: 1.7.4 (cross compiled)
 - Hyperledger Besu: 1.4.2 (compiled. ARM64 only)
 
@@ -36,14 +35,6 @@ Run the following command to update to last versions available
 
 - Prysm: 0.3.4 (official binary. ARM64 only)
 - Lighthouse: 0.1.1 (compiled. ARM64 only)
-
-## Ethereum framework
-
-- Swarm: 0.5.7 (official binary)
-- Raiden Network: 0.200.0~rc1 (official binary)
-- IPFS: 0.4.23 (official binary)
-- Status.im: 0.34.0~beta3 (cross compiled)
-- Vipnode: 2.3.3 (official binary)
 
 # What you need
 
@@ -67,21 +58,15 @@ Run the following command to update to last versions available
 
 Run "update-ethereum" command to update to the latest versions. This is now an apt-get install alias
 
-**Current image release date**: 2020/03/23
+**Current image release date**: 2020/10/24
 
 There are 2 images available. One for the Nanopc-T4 ARM Soc, and one for RockPro64 with Geth as default client:
 
 NANOPC-T4 IMAGE
 
-https://ethraspbian.com/downloads/Armbian_20.05.0-trunk_Nanopct4_bionic_legacy_4.4.213.img.zip
+https://ethraspbian.com/downloads/Armbian_20.11.0-trunk_Nanopct4_focal_legacy_4.4.213.img.zip
 
-SHA256 e67fdc743b33a4b397a55d721fcd35fc3541a8f26bd006d2461c035c2e46fe97
-
-ROCKPRO64 IMAGE
-
-https://ethraspbian.com/downloads/Armbian_20.05.0-trunk_Rockpro64_bionic_legacy_4.4.213.img.zip
-
-For other compatible devices please check below instructions for building the image by yourself.
+SHA256 e1af32421372ed00efa8d4404ba5edf87eae3ba91bf51104ae07bfdf7aedd17e
 
 # Install instructions
 
@@ -121,8 +106,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/linux.m
 Installing image:
 
 ```
-unzip Armbian_20.05.0-trunk_Nanopct4_bionic_legacy_4.4.213.img.zip
-sudo dd bs=1M if=Armbian_20.05.0-trunk_Nanopct4_bionic_legacy_4.4.213.img of=/dev/mmcblk0 && sync
+unzip Armbian_20.11.0-trunk_Nanopct4_focal_legacy_4.4.213.img.zip
+sudo dd bs=1M if=Armbian_20.11.0-trunk_Nanopct4_focal_legacy_4.4.213.img of=/dev/mmcblk0 && sync
 ```
 
 3. Extract the MicroSD card
