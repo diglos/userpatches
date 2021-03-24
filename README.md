@@ -1,3 +1,8 @@
+DISCLAIMER: This is a legacy repository. Please move to our new one:
+
+https://github.com/diglos/ethereumonarm
+
+
 Ethereum on ARM64 is a custom Ubuntu Linux image for the NanoPC-T4 ARM SoC [1] and the RockPro64 ARM SoC [2] that runs Geth or Parity Ethereum clients as a boot service and automatically turns the device into a full Ethereum node. It includes other components of the Ethereum ecosystem such as Trinity, Status.im, Raiden, IPFS, Swarm and Vipnode as well as initial support for Eth2.0 clients.
 
 Images take care of all necessary steps, from setting up the environment to running the Ethereum software and synchronizing the blockchain. All you need is to flash the MicroSD card with the image, plug an ethernet cable and power on the device.
